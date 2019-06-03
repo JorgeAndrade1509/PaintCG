@@ -3,7 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proyecto1_comp_grafica.MisPaneles;
+package Cuadrado;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.geom.Rectangle2D;
+import java.util.Random;
 
 /**
  *
@@ -27,101 +33,367 @@ public class PanelCuadrado extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        yinicial = new javax.swing.JTextField();
+        xinicial = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
+        lado = new javax.swing.JTextField();
+        DibujarCuadrado = new javax.swing.JButton();
+        BorrarCuadrado = new javax.swing.JButton();
+        PanelDibujoCuadrado = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(255, 204, 204));
 
-        jLabel2.setText("Punto 1:");
+        jLabel1.setText("Escriba los siguientes campos para dibujar el cuadrado:");
 
-        jLabel3.setText("Punto 2:");
+        jLabel2.setText("Punto inicial:");
 
-        jLabel4.setText("X");
+        jLabel3.setText("X:");
 
-        jLabel5.setText("X");
+        jLabel4.setText("Y:");
 
-        jLabel6.setText("Y");
+        yinicial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yinicialActionPerformed(evt);
+            }
+        });
 
-        jLabel7.setText("Y");
+        xinicial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                xinicialActionPerformed(evt);
+            }
+        });
 
-        jLabel8.setText("Escriba los siguientes datos para dibujar el cuadrado:");
+        jLabel5.setText("Lado:");
+
+        lado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ladoActionPerformed(evt);
+            }
+        });
+
+        DibujarCuadrado.setText("Dibujar");
+        DibujarCuadrado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DibujarCuadradoActionPerformed(evt);
+            }
+        });
+
+        BorrarCuadrado.setText("Borrar");
+        BorrarCuadrado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BorrarCuadradoActionPerformed(evt);
+            }
+        });
+
+        PanelDibujoCuadrado.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout PanelDibujoCuadradoLayout = new javax.swing.GroupLayout(PanelDibujoCuadrado);
+        PanelDibujoCuadrado.setLayout(PanelDibujoCuadradoLayout);
+        PanelDibujoCuadradoLayout.setHorizontalGroup(
+            PanelDibujoCuadradoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        PanelDibujoCuadradoLayout.setVerticalGroup(
+            PanelDibujoCuadradoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 473, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(132, 132, 132)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel8)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel4)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(88, 88, 88)
+                                .addComponent(jLabel1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(28, 28, 28)
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(xinicial, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(yinicial, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lado, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(116, 116, 116)
+                        .addComponent(DibujarCuadrado, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel7)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(133, Short.MAX_VALUE))
+                        .addComponent(BorrarCuadrado)
+                        .addGap(0, 4, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(PanelDibujoCuadrado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel8)
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel4))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel6))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel5)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel3))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel7)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(544, Short.MAX_VALUE))
+                        .addComponent(DibujarCuadrado, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BorrarCuadrado, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(yinicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(xinicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5)
+                            .addComponent(lado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(18, 18, 18)
+                .addComponent(PanelDibujoCuadrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(45, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void yinicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yinicialActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_yinicialActionPerformed
+
+    private void xinicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xinicialActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_xinicialActionPerformed
+
+    private void BorrarCuadradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BorrarCuadradoActionPerformed
+        xinicial.setText(null);
+        lado.setText(null);
+        yinicial.setText(null);
+       
+        PanelDibujoCuadrado.removeAll();
+        PanelDibujoCuadrado.repaint();
+    }//GEN-LAST:event_BorrarCuadradoActionPerformed
+
+    private void DibujarCuadradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DibujarCuadradoActionPerformed
+        Graphics t = PanelDibujoCuadrado.getGraphics();
+        
+         //Obtener colores random
+        Random rand = new Random();
+        float r = rand.nextFloat();
+        float g = rand.nextFloat();
+        float b = rand.nextFloat();
+        Color randomColor = new Color(r, g, b);
+        
+        //obtener valores por teclado del usuario
+        int x1,x2,y1,y2,incremento=1;
+        int la=0;
+        x1=Integer.parseInt(xinicial.getText());
+        y1=Integer.parseInt(yinicial.getText());
+        la=Integer.parseInt(lado.getText());
+        
+         //Variables para el metodo DDA
+        float xi,yi,xf=0,yf=0;
+        float deltax,deltay,k;
+        float xinc,yinc;
+        
+        
+   x2=x1+la;
+   y2=y1;
+   while (incremento != 5)
+   {
+        //inicia la primera linea del cuadrado---------------------------------------------------
+        
+       
+        
+         //comienza el metodo DDA-----------------------------------------
+        
+       
+        deltax=x2-x1;
+        deltay=y2-y1;
+        
+        if (Math.abs(deltax) > Math.abs(deltay)){
+        k=Math.abs(deltax);
+        }
+        else if (Math.abs(deltay) > Math.abs(deltax)){
+            k=Math.abs(deltay);
+        }
+        else
+        {
+            k=Math.abs(deltax);
+        }
+        
+        xinc=deltax/k;
+        yinc=deltay/k;
+       
+       
+     if(deltax>= 0 && deltay>= 0 )
+     {
+        if (deltax != 0 && deltay !=0){
+            System.out.print("parte 1");
+                yi=y1;
+            for(xi=x1;xi<=x2;xi=xi+xinc){
+
+                xf=xi+xinc;
+                yf=yi+yinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                yi=yi+yinc;
+            } 
+        }
+        else if ( deltax == 0){
+            System.out.print("parte 2");
+            xi=x1;
+            for(yi=y1;yi<=y2;yi=yi+yinc){
+
+                yf=yi+yinc;
+                xf=xi+xinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                xi=xi+xinc;
+            } 
+        }
+        else if ( deltay == 0){
+            System.out.print("parte 3");
+            yi=y1;
+            for(xi=x1;xi<=x2;xi=xi+xinc){
+
+                xf=xi+xinc;
+                yf=yi+yinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                yi=yi+yinc;
+            } 
+        }
+     }
+     else{
+        if (deltax != 0 && deltay !=0 && deltay>deltax){
+            System.out.print("parte 4");
+                yi=y1;
+            for(xi=x1;xi>=x2;xi=xi-xinc){
+
+                xf=xi-xinc;
+                yf=yi-yinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                yi=yi-yinc;
+            } 
+        }
+        else if (deltax != 0 && deltay !=0 && deltax>deltay){
+            System.out.print("parte 5");
+                yi=y1;
+            for(xi=x1;xi<=x2;xi=xi+xinc){
+
+                xf=xi+xinc;
+                yf=yi+yinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                yi=yi+yinc;
+            } 
+        }
+        else if ( deltax == 0){
+            System.out.print("parte 6");
+            xi=x1;
+            for(yi=y1;yi>=y2;yi=yi+yinc){ //yinc es negativo aqui
+
+                yf=yi-yinc;
+                xf=xi-xinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                xi=xi-xinc;
+            } 
+        }
+        else if ( deltay == 0){
+            System.out.print("parte 7");
+            yi=y1;
+            for(xi=x1;xi>=x2;xi=xi+xinc){ //xinc es negativo aqui
+
+                xf=xi-xinc;
+                yf=yi-yinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                yi=yi-yinc;
+            } 
+        }    
+            
+            
+        }
+     
+     
+     //Termina el metodo DDA-----------------------------------------
+        
+        //Termina la primera linea del cuadrado hasta llegar a la ultima 4ta linea del cuadrado por medio del incremento---------------------------------------------------
+    
+        
+        
+        if (incremento==1){ 
+            x1=Math.round(xf);
+            y1=Math.round(yf);
+           x2=Math.round(xf);
+           y2=Math.round(yf)+la;
+        }
+        else if (incremento==2){
+            x1=Math.round(xf)-1;
+            y1=Math.round(yf);
+           x2=Math.round(xf)-la;
+           y2=Math.round(yf);
+        }
+        else if (incremento==3)
+        {
+            x1=Math.round(xf)-1;
+        y1=Math.round(yf)-1;
+            x2=Math.round(xf);
+           y2=Math.round(yf)-la;
+        }
+        
+        incremento=incremento+1;
+    }  
+        
+        
+        
+     
+       
+        
+        
+        
+        
+    }//GEN-LAST:event_DibujarCuadradoActionPerformed
+
+    private void ladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ladoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ladoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BorrarCuadrado;
+    private javax.swing.JButton DibujarCuadrado;
+    private javax.swing.JPanel PanelDibujoCuadrado;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField lado;
+    private javax.swing.JTextField xinicial;
+    private javax.swing.JTextField yinicial;
     // End of variables declaration//GEN-END:variables
 }

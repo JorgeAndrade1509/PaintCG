@@ -50,6 +50,9 @@ public class PanelLinea extends javax.swing.JPanel {
         PanelDibujoLinea = new javax.swing.JPanel();
         DibujarLinea = new javax.swing.JButton();
         BotonBorrarLinea = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(204, 255, 204));
 
@@ -83,7 +86,7 @@ public class PanelLinea extends javax.swing.JPanel {
         );
         PanelDibujoLineaLayout.setVerticalGroup(
             PanelDibujoLineaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 518, Short.MAX_VALUE)
+            .addGap(0, 473, Short.MAX_VALUE)
         );
 
         DibujarLinea.setBackground(new java.awt.Color(153, 204, 255));
@@ -102,6 +105,21 @@ public class PanelLinea extends javax.swing.JPanel {
             }
         });
 
+        jButton1.setText("Escalar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("canitidad a escalar:");
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -109,12 +127,12 @@ public class PanelLinea extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(PanelDibujoLinea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
+                                .addGap(96, 96, 96)
+                                .addComponent(jLabel1))
+                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel4)
@@ -131,16 +149,24 @@ public class PanelLinea extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(xfinal, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel7))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(96, 96, 96)
-                                .addComponent(jLabel1)))
+                                .addComponent(jLabel7)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(yfinal, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(DibujarLinea, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BotonBorrarLinea, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(BotonBorrarLinea, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(PanelDibujoLinea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton1)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -158,7 +184,9 @@ public class PanelLinea extends javax.swing.JPanel {
                                 .addComponent(jLabel3))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel7)
-                                .addComponent(yfinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(yfinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(DibujarLinea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(BotonBorrarLinea))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel2)
                                 .addComponent(xinicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -166,14 +194,15 @@ public class PanelLinea extends javax.swing.JPanel {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(yinicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel6)))
-                        .addGap(20, 20, 20))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(DibujarLinea, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BotonBorrarLinea, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButton1)
+                            .addComponent(jLabel8)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                .addComponent(PanelDibujoLinea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(PanelDibujoLinea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -196,11 +225,11 @@ public class PanelLinea extends javax.swing.JPanel {
         y2=Integer.parseInt(yfinal.getText());
         
         //Variables para el metodo DDA
-        int xi,yi,xf,yf;
-        int deltax,deltay,k;
+        float xi,yi,xf,yf;
+        float deltax,deltay,k;
         float xinc,yinc;
-        int xinc2;
-        int yinc2;
+       // int xinc2;
+        //int yinc2;
         
         //comienza el metodo DDA-----------------------------------------
         
@@ -208,49 +237,128 @@ public class PanelLinea extends javax.swing.JPanel {
         deltax=x2-x1;
         deltay=y2-y1;
         
-        if (deltax > deltay){
-        k=deltax;
+        if (Math.abs(deltax) > Math.abs(deltay)){
+        k=Math.abs(deltax);
         }
-        else if (deltay > deltax){
-            k=deltay;
+        else if (Math.abs(deltay) > Math.abs(deltax)){
+            k=Math.abs(deltay);
         }
         else
         {
-            k=deltax;
+            k=Math.abs(deltax);
         }
         
         xinc=deltax/k;
         yinc=deltay/k;
-        
-        yinc2=Math.round(yinc);
-        xinc2=Math.round(xinc);
        
-        /*
-        for(xi=x1;xi<=x2;xi=xi+(int)xinc){
-            yi=y1;
-            xf=xi+(int)xinc;
-            yf=yi+(int)yinc;
-            t.drawLine(xi, xf, yf, yf);
-            t.setColor(randomColor.brighter());
-            yi=yi+(int)yinc;
-        */
-        
-        
-        
-        for(xi=x1;xi<=x2;xi=xi+xinc2){
-            yi=y1;
-            xf=xi+xinc2;
-            yf=yi+yinc2;
-            t.drawLine(xi, xf, yf, yf);
-            t.setColor(randomColor.brighter());
-            yi=yi+yinc2;
+       
+     if(deltax>= 0 && deltay>= 0 )
+     {
+        if (deltax != 0 && deltay !=0){
+            System.out.print("parte 1");
+                yi=y1;
+            for(xi=x1;xi<=x2;xi=xi+xinc){
+
+                xf=xi+xinc;
+                yf=yi+yinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                yi=yi+yinc;
+            } 
         }
-        //Termina el metodo DDA-----------------------------------------
-       
-       
+        else if ( deltax == 0){
+            System.out.print("parte 2");
+            xi=x1;
+            for(yi=y1;yi<=y2;yi=yi+yinc){
+
+                yf=yi+yinc;
+                xf=xi+xinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                xi=xi+xinc;
+            } 
+        }
+        else if ( deltay == 0){
+            System.out.print("parte 3");
+            yi=y1;
+            for(xi=x1;xi<=x2;xi=xi+xinc){
+
+                xf=xi+xinc;
+                yf=yi+yinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                yi=yi+yinc;
+            } 
+        }
+     }
+     else{
+        if (deltax != 0 && deltay !=0 && deltay>deltax){
+            System.out.print("parte 4");
+                yi=y1;
+            for(xi=x1;xi>=x2;xi=xi-xinc){
+
+                xf=xi-xinc;
+                yf=yi-yinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                yi=yi-yinc;
+            } 
+        }
+        else if (deltax != 0 && deltay !=0 && deltax>deltay){
+            System.out.print("parte 5");
+                yi=y1;
+            for(xi=x1;xi<=x2;xi=xi+xinc){
+
+                xf=xi+xinc;
+                yf=yi+yinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                yi=yi+yinc;
+            } 
+        }
+        else if ( deltax == 0){
+            System.out.print("parte 6");
+            xi=x1;
+            for(yi=y1;yi>=y2;yi=yi+yinc){  //yinc es negativo aqui
+
+                yf=yi-yinc;
+                xf=xi-xinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                xi=xi-xinc;
+            } 
+        }
+        else if ( deltay == 0){
+            System.out.print("parte 7");
+            yi=y1;
+            for(xi=x1;xi>=x2;xi=xi+xinc){ //xinc es negativo aqui
+
+                xf=xi-xinc;
+                yf=yi-yinc;
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                yi=yi-yinc;
+            } 
+        }    
             
-        
-        
+            
+        }
+     
+     
+     //Termina el metodo DDA-----------------------------------------
     }//GEN-LAST:event_DibujarLineaActionPerformed
 
     private void yfinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yfinalActionPerformed
@@ -266,11 +374,20 @@ public class PanelLinea extends javax.swing.JPanel {
         PanelDibujoLinea.repaint();
     }//GEN-LAST:event_BotonBorrarLineaActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonBorrarLinea;
     private javax.swing.JButton DibujarLinea;
     private javax.swing.JPanel PanelDibujoLinea;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -278,6 +395,8 @@ public class PanelLinea extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField xfinal;
     private javax.swing.JTextField xinicial;
     private javax.swing.JTextField yfinal;
