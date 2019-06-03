@@ -3,6 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+//Ya enlazado con git 
 package proyecto1_comp_grafica.MisPaneles;
 
 import java.awt.Graphics;
@@ -144,7 +146,7 @@ public class PanelCirculo extends javax.swing.JPanel {
          xc=Integer.parseInt(xcentral.getText());
          yc=Integer.parseInt(ycentral.getText());
          
-         x2=xc;
+         //x2=xc;
          
          r=Integer.parseInt(radio.getText());
          
@@ -164,9 +166,11 @@ public class PanelCirculo extends javax.swing.JPanel {
              }
              
              
+             
+             
          }
          
-         xc=x2-r;
+        /* xc=x2-r;
          while( yc < xc){
             
              t.drawLine(xc-(2*r),yc,xc-(2*r),yc);t.drawLine(yc,xc-(2*r),yc,xc-(2*r));
@@ -181,7 +185,7 @@ public class PanelCirculo extends javax.swing.JPanel {
              }
              
              
-         }
+         }*/
          
         
          
