@@ -5,6 +5,8 @@
  */
 
 //Ya enlazado con git 
+
+//Con git s
 package proyecto1_comp_grafica.MisPaneles;
 
 import java.awt.Graphics;
