@@ -5,7 +5,9 @@
  */
 package proyecto1_comp_grafica.MisPaneles;
 
+import java.awt.Color;
 import java.awt.Graphics;
+import java.util.Random;
 
 /**
  *
@@ -32,22 +34,33 @@ public class PanelTriangulo extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         xinicial = new javax.swing.JTextField();
-        xfinal = new javax.swing.JTextField();
+        xmedio = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        yfinal = new javax.swing.JTextField();
+        ymedio = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         yinicial = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         PanelDibujoTriangulo = new javax.swing.JPanel();
         DibujarTriangulo = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        xfinal = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        yfinal = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 255, 255));
 
         jLabel2.setText("Punto 1:");
 
         jLabel3.setText("Punto 2:");
+
+        xmedio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                xmedioActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("X");
 
@@ -79,6 +92,12 @@ public class PanelTriangulo extends javax.swing.JPanel {
             }
         });
 
+        jLabel9.setText("Punto 3:");
+
+        jLabel10.setText("X");
+
+        jLabel11.setText("Y");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -86,9 +105,11 @@ public class PanelTriangulo extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(132, 132, 132)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel8)
+                        .addGap(47, 47, 47)
+                        .addComponent(PanelDibujoTriangulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -104,25 +125,36 @@ public class PanelTriangulo extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(xmedio, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel8))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ymedio, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(xfinal, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel7)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(yfinal, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(DibujarTriangulo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(PanelDibujoTriangulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(25, Short.MAX_VALUE))
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(yfinal, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(DibujarTriangulo))))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(DibujarTriangulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel8)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -134,15 +166,22 @@ public class PanelTriangulo extends javax.swing.JPanel {
                                 .addComponent(jLabel6))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel5)
-                                .addComponent(xfinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(xmedio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel3))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel7)
-                                .addComponent(yfinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(DibujarTriangulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(ymedio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel10)
+                                .addComponent(xfinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel9))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel11)
+                                .addComponent(yfinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(PanelDibujoTriangulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(64, 64, 64))
         );
@@ -152,84 +191,219 @@ public class PanelTriangulo extends javax.swing.JPanel {
         
         Graphics t = PanelDibujoTriangulo.getGraphics();
         
-        int xi,xf,yi,yf;
-        xi=Integer.parseInt(xinicial.getText());
-        yi=Integer.parseInt(yinicial.getText());
-        xf=Integer.parseInt(xfinal.getText());
-        yf=Integer.parseInt(yfinal.getText());
+        //Obtener colores random
+        Random rand = new Random();
+        float r = rand.nextFloat();
+        float g = rand.nextFloat();
+        float b = rand.nextFloat();
+        Color randomColor = new Color(r, g, b);
+
+        //obtener valores por teclado del usuario
+        int x1,x2,x3,y1,y2,y3,x4,y4,incremento=1;
+        x1=Integer.parseInt(xinicial.getText());
+        y1=Integer.parseInt(yinicial.getText());
+        x2=Integer.parseInt(xmedio.getText());
+        y2=Integer.parseInt(ymedio.getText());
+        x3=Integer.parseInt(xfinal.getText());
+        y3=Integer.parseInt(yfinal.getText());
+        x4=x1; // para la tercera linea
+        y4=y1; // para la tercera linea
         
-        float deltax,deltay,punto,x1,y1,x2=0,y2=0;
+        //Variables para el metodo DDA
+        float xi,yi,xf,yf;
+        float deltax,deltay,k;
+        float xinc,yinc;
+       // int xinc2;
+        //int yinc2;
         
         
-        //Inicia metodo de bresenham---------------------------------------------------------------- (punto 1)
-        deltax=(float)(xf-xi);
-        deltay=(float)(yf-yi);
-        System.out.print("deltay: "+deltay+"\n");
-        punto= (2*deltay)-deltax;
+    while (incremento != 4){
         
+        //comienza el metodo DDA-----------------------------------------
         
-        System.out.print("punto: "+punto+"\n");
-        y1=yi;
+       
+        deltax=x2-x1;
+        deltay=y2-y1;
         
-      if(deltay>=0){
-            
-       System.out.print("parte 1: \n");
-        for(x1=xi;x1<=xf;x1++){
-            
-            
-            if(punto>=0){
-                punto=punto+(2*deltay)-(2*deltax);
-                x2=x1+1;
-                y2=y1+1;
+        if (Math.abs(deltax) > Math.abs(deltay)){
+        k=Math.abs(deltax);
+        }
+        else if (Math.abs(deltay) > Math.abs(deltax)){
+            k=Math.abs(deltay);
+        }
+        else
+        {
+            k=Math.abs(deltax);
+        }
+        
+        xinc=deltax/k;
+        yinc=deltay/k;
+       
+       
+     if(deltax>= 0 && deltay>= 0 )
+     {
+        if (deltax != 0 && deltay !=0){
+            System.out.print("parte 1");
+                yi=y1;
+            for(xi=x1;xi<=x2;xi=xi+xinc){
+
+                xf=xi+xinc;
+                yf=yi+yinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                yi=yi+yinc;
+            } 
+        }
+        else if ( deltax == 0){
+            System.out.print("parte 2");
+            xi=x1;
+            for(yi=y1;yi<=y2;yi=yi+yinc){
+
+                yf=yi+yinc;
+                xf=xi+xinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                xi=xi+xinc;
+            } 
+        }
+        else if ( deltay == 0){
+            System.out.print("parte 3");
+            yi=y1;
+            for(xi=x1;xi<=x2;xi=xi+xinc){
+
+                xf=xi+xinc;
+                yf=yi+yinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                yi=yi+yinc;
+            } 
+        }
+     }
+     else{
+        if (deltax != 0 && deltay !=0 && deltay>deltax){
+            System.out.print("parte 4");
+                yi=y1;
+            for(xi=x1;xi>=x2;xi=xi+xinc){
+
+                xf=xi+xinc;
+                yf=yi+yinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                yi=yi+yinc;
+            } 
+        }
+        else if (deltax != 0 && deltay !=0 && Math.abs(deltay)>Math.abs(deltax)){
+            System.out.print("parte 9");
+                xi=x1;
+            for(yi=y1;yi>=y2;yi=yi+yinc){
+
+                yf=yi+yinc;
+                xf=xi+xinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                xi=xi+xinc;
+            } 
+        } 
+        else if (deltax != 0 && deltay !=0 && deltax>deltay){
+            System.out.print("parte 5");
+                yi=y1;
+            for(xi=x1;xi<=x2;xi=xi+xinc){
+
+                xf=xi+xinc;
+                yf=yi+yinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                yi=yi+yinc;
+            } 
+        }
+        else if ( deltax == 0){
+            System.out.print("parte 6");
+            xi=x1;
+            for(yi=y1;yi>=y2;yi=yi+yinc){  //yinc es negativo aqui
+
+                yf=yi-yinc;
+                xf=xi-xinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                xi=xi-xinc;
+            } 
+        }
+        else if ( deltay == 0){
+            System.out.print("parte 7");
+            yi=y1;
+            for(xi=x1;xi>=x2;xi=xi+xinc){ //xinc es negativo aqui
+
+                xf=xi-xinc;
+                yf=yi-yinc;
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                yi=yi-yinc;
+            } 
+        }
+        else if(deltax == deltay ){
+            System.out.print("parte 8");
+            yi=y1;
+            for(xi=x1;xi>=x2;xi=xi+xinc){ //xinc es negativo aqui
+
+                xf=xi+xinc;
+                yf=yi+yinc;
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                yi=yi+yinc;
+            } 
             }
-            else{
-                punto=punto+(2*deltay);
-                x2=x1+1;
-                y2=y1;
-            }
-            
-            t.drawLine(Math.round(x1), Math.round(y1), Math.round(x2), Math.round(y2));
-            
-            y1=y2;
-            
+          
             
         }
-      }
-      else if (deltay <0){
-          deltay=Math.abs((float)(yf-yi));
-          punto= (2*deltay)-deltax;
-          System.out.print("parte 2: \n");
-          for(x1=xi;x1<=xf;x1++){
-            
-            
-            if(punto>=0){
-                punto=punto+(2*deltay)-(2*deltax);
-                x2=x1+1;
-                y2=y1-1;
-            }
-            else{
-                punto=punto+(2*deltay);
-                x2=x1+1;
-                y2=y1;
-            }
-            
-            t.drawLine(Math.round(x1), Math.round(y1), Math.round(x2), Math.round(y2));
-            
-            y1=y2;
-            
-            
-        }
-      }
-        
-      //Termina metodo de bressenham-----------------------------------------------------------------------(punto 1)
+     
+     
+     //Termina el metodo DDA-----------------------------------------
+     incremento++;
+     
+     if (incremento == 2){
+         x1=x2;
+         y1=y2;
+         x2=x3;
+         y2=y3;
+     }
+     else if (incremento == 3){
+         x1=x3;
+         y1=y3;
+         x2=x4;
+         y2=y4;
+     }
+     
+    }  
       
       
     }//GEN-LAST:event_DibujarTrianguloActionPerformed
+
+    private void xmedioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xmedioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_xmedioActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton DibujarTriangulo;
     private javax.swing.JPanel PanelDibujoTriangulo;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -237,9 +411,12 @@ public class PanelTriangulo extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField xfinal;
     private javax.swing.JTextField xinicial;
+    private javax.swing.JTextField xmedio;
     private javax.swing.JTextField yfinal;
     private javax.swing.JTextField yinicial;
+    private javax.swing.JTextField ymedio;
     // End of variables declaration//GEN-END:variables
 }

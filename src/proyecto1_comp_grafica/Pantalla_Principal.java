@@ -194,7 +194,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         PanelDinamico.setLayout(PanelDinamicoLayout);
         PanelDinamicoLayout.setHorizontalGroup(
             PanelDinamicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 761, Short.MAX_VALUE)
+            .addGap(0, 985, Short.MAX_VALUE)
         );
         PanelDinamicoLayout.setVerticalGroup(
             PanelDinamicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,18 +234,27 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         linea1.setVisible(true);
         cuadrado1.setVisible(false);
         poligono1.setVisible(false);
+        triangulo1.setVisible(false);
+        circulo1.setVisible(false);
+        elipse1.setVisible(false);
     }//GEN-LAST:event_lineaActionPerformed
 
     private void cuadradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cuadradoActionPerformed
         cuadrado1.setVisible(true);
         linea1.setVisible(false);
         poligono1.setVisible(false);
+        triangulo1.setVisible(false);
+        circulo1.setVisible(false);
+        elipse1.setVisible(false);
     }//GEN-LAST:event_cuadradoActionPerformed
 
     private void poligonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poligonoActionPerformed
          poligono1.setVisible(true);
         linea1.setVisible(false);
         cuadrado1.setVisible(false);
+        triangulo1.setVisible(false);
+        circulo1.setVisible(false);
+        elipse1.setVisible(false);
     }//GEN-LAST:event_poligonoActionPerformed
 
     private void ElipseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ElipseActionPerformed

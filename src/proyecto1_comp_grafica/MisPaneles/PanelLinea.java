@@ -50,9 +50,16 @@ public class PanelLinea extends javax.swing.JPanel {
         PanelDibujoLinea = new javax.swing.JPanel();
         DibujarLinea = new javax.swing.JButton();
         BotonBorrarLinea = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        TrasladarLinea = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        trasy = new javax.swing.JTextField();
+        trasx = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        EscalarLinea = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        esc = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 255, 204));
 
@@ -105,20 +112,27 @@ public class PanelLinea extends javax.swing.JPanel {
             }
         });
 
-        jButton1.setText("Escalar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        TrasladarLinea.setText("Trasladar");
+        TrasladarLinea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                TrasladarLineaActionPerformed(evt);
             }
         });
 
-        jLabel8.setText("canitidad a escalar:");
+        jLabel8.setText("Trasladar:");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jLabel9.setText("X");
+
+        jLabel10.setText("Y");
+
+        EscalarLinea.setText("Escalar");
+        EscalarLinea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                EscalarLineaActionPerformed(evt);
             }
         });
+
+        jLabel11.setText("Escalar:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -126,67 +140,109 @@ public class PanelLinea extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(96, 96, 96)
-                                .addComponent(jLabel1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(xinicial, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(yinicial, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(39, 39, 39)
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(xfinal, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel7)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(yfinal, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(DibujarLinea, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BotonBorrarLinea, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(96, 270, Short.MAX_VALUE)
+                        .addComponent(jLabel1)
+                        .addGap(322, 322, 322))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel12)
+                                .addGap(263, 263, 263))
                             .addComponent(PanelDibujoLinea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel4)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(xinicial, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel6)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(yinicial, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel9)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(trasx, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel10)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(trasy, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(59, 59, 59)
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel5)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(xfinal, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(TrasladarLinea)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel11)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(4, 4, 4)
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(yfinal, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(esc, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(DibujarLinea, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(BotonBorrarLinea, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(EscalarLinea))
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(xfinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3)
+                            .addComponent(yfinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7)
+                            .addComponent(DibujarLinea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BotonBorrarLinea))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel5)
-                                .addComponent(xfinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel3))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel7)
-                                .addComponent(yfinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(DibujarLinea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(BotonBorrarLinea))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel12)
+                                .addGap(22, 22, 22))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(trasx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel9)
+                                        .addComponent(jLabel8))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(trasy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel10)
+                                        .addComponent(TrasladarLinea)
+                                        .addComponent(jLabel11)
+                                        .addComponent(esc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(EscalarLinea)))
+                                .addGap(18, 33, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel2)
                                 .addComponent(xinicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -194,14 +250,7 @@ public class PanelLinea extends javax.swing.JPanel {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(yinicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel6)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
-                            .addComponent(jLabel8)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(PanelDibujoLinea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -230,6 +279,10 @@ public class PanelLinea extends javax.swing.JPanel {
         float xinc,yinc;
        // int xinc2;
         //int yinc2;
+
+        
+        
+        
         
         //comienza el metodo DDA-----------------------------------------
         
@@ -301,15 +354,29 @@ public class PanelLinea extends javax.swing.JPanel {
         if (deltax != 0 && deltay !=0 && deltay>deltax){
             System.out.print("parte 4");
                 yi=y1;
-            for(xi=x1;xi>=x2;xi=xi-xinc){
+            for(xi=x1;xi>=x2;xi=xi+xinc){
 
-                xf=xi-xinc;
-                yf=yi-yinc;
+                xf=xi+xinc;
+                yf=yi+yinc;
 
 
                 t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
                 t.setColor(randomColor.brighter());
-                yi=yi-yinc;
+                yi=yi+yinc;
+            } 
+        }
+        else if (deltax != 0 && deltay !=0 && Math.abs(deltay)>Math.abs(deltax)){
+            System.out.print("parte 9");
+                xi=x1;
+            for(yi=y1;yi>=y2;yi=yi+yinc){
+
+                yf=yi+yinc;
+                xf=xi+xinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                xi=xi+xinc;
             } 
         }
         else if (deltax != 0 && deltay !=0 && deltax>deltay){
@@ -352,8 +419,21 @@ public class PanelLinea extends javax.swing.JPanel {
                 t.setColor(randomColor.brighter());
                 yi=yi-yinc;
             } 
-        }    
-            
+        }
+        else if(deltax == deltay ){
+            System.out.print("parte 8");
+            yi=y1;
+            for(xi=x1;xi>=x2;xi=xi+xinc){ //xinc es negativo aqui
+
+                xf=xi+xinc;
+                yf=yi+yinc;
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                yi=yi+yinc;
+            } 
+            }
+           
             
         }
      
@@ -374,21 +454,408 @@ public class PanelLinea extends javax.swing.JPanel {
         PanelDibujoLinea.repaint();
     }//GEN-LAST:event_BotonBorrarLineaActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void TrasladarLineaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TrasladarLineaActionPerformed
+        
+        Graphics t = PanelDibujoLinea.getGraphics();
+       
+        
+        PanelDibujoLinea.removeAll();
+        PanelDibujoLinea.repaint();
+        
+        int tx,ty;
+        
+        tx=Integer.parseInt(trasx.getText());
+        ty=Integer.parseInt(trasy.getText());
+        
+        int x1,x2,y1,y2;
+        x1=Integer.parseInt(xinicial.getText());
+        y1=Integer.parseInt(yinicial.getText());
+        x2=Integer.parseInt(xfinal.getText());
+        y2=Integer.parseInt(yfinal.getText());
+        
+        x1=x1+tx;
+        y1=y1+ty;
+        x2=x2+tx;
+        y2=y2+ty;
+        
+        
+        
+        
+        //Obtener colores random
+        Random rand = new Random();
+        float r = rand.nextFloat();
+        float g = rand.nextFloat();
+        float b = rand.nextFloat();
+        Color randomColor = new Color(r, g, b);
+        
+        //Variables para el metodo DDA
+        float xi,yi,xf,yf;
+        float deltax,deltay,k;
+        float xinc,yinc;
+       // int xinc2;
+        //int yinc2;
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+        
+        
+        
+        
+        //comienza el metodo DDA-----------------------------------------
+        
+       
+        deltax=x2-x1;
+        deltay=y2-y1;
+        
+        if (Math.abs(deltax) > Math.abs(deltay)){
+        k=Math.abs(deltax);
+        }
+        else if (Math.abs(deltay) > Math.abs(deltax)){
+            k=Math.abs(deltay);
+        }
+        else
+        {
+            k=Math.abs(deltax);
+        }
+        
+        xinc=deltax/k;
+        yinc=deltay/k;
+       
+       
+     if(deltax>= 0 && deltay>= 0 )
+     {
+        if (deltax != 0 && deltay !=0){
+            System.out.print("parte 1");
+                yi=y1;
+            for(xi=x1;xi<=x2;xi=xi+xinc){
+
+                xf=xi+xinc;
+                yf=yi+yinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                yi=yi+yinc;
+            } 
+        }
+        else if ( deltax == 0){
+            System.out.print("parte 2");
+            xi=x1;
+            for(yi=y1;yi<=y2;yi=yi+yinc){
+
+                yf=yi+yinc;
+                xf=xi+xinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                xi=xi+xinc;
+            } 
+        }
+        else if ( deltay == 0){
+            System.out.print("parte 3");
+            yi=y1;
+            for(xi=x1;xi<=x2;xi=xi+xinc){
+
+                xf=xi+xinc;
+                yf=yi+yinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                yi=yi+yinc;
+            } 
+        }
+     }
+     else{
+        if (deltax != 0 && deltay !=0 && deltay>deltax){
+            System.out.print("parte 4");
+                yi=y1;
+            for(xi=x1;xi>=x2;xi=xi+xinc){
+
+                xf=xi+xinc;
+                yf=yi+yinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                yi=yi+yinc;
+            } 
+        }
+        else if (deltax != 0 && deltay !=0 && Math.abs(deltay)>Math.abs(deltax)){
+            System.out.print("parte 9");
+                xi=x1;
+            for(yi=y1;yi>=y2;yi=yi+yinc){
+
+                yf=yi+yinc;
+                xf=xi+xinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                xi=xi+xinc;
+            } 
+        }
+        else if (deltax != 0 && deltay !=0 && deltax>deltay){
+            System.out.print("parte 5");
+                yi=y1;
+            for(xi=x1;xi<=x2;xi=xi+xinc){
+
+                xf=xi+xinc;
+                yf=yi+yinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                yi=yi+yinc;
+            } 
+        }
+        else if ( deltax == 0){
+            System.out.print("parte 6");
+            xi=x1;
+            for(yi=y1;yi>=y2;yi=yi+yinc){  //yinc es negativo aqui
+
+                yf=yi-yinc;
+                xf=xi-xinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                xi=xi-xinc;
+            } 
+        }
+        else if ( deltay == 0){
+            System.out.print("parte 7");
+            yi=y1;
+            for(xi=x1;xi>=x2;xi=xi+xinc){ //xinc es negativo aqui
+
+                xf=xi-xinc;
+                yf=yi-yinc;
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                yi=yi-yinc;
+            } 
+        }
+        else if(deltax == deltay ){
+            System.out.print("parte 8");
+            yi=y1;
+            for(xi=x1;xi>=x2;xi=xi+xinc){ //xinc es negativo aqui
+
+                xf=xi+xinc;
+                yf=yi+yinc;
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                yi=yi+yinc;
+            } 
+            }
+           
+            
+        }
+     
+     
+     //Termina el metodo DDA-----------------------------------------
+    }//GEN-LAST:event_TrasladarLineaActionPerformed
+
+    private void EscalarLineaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EscalarLineaActionPerformed
+        Graphics t = PanelDibujoLinea.getGraphics();
+        
+        //Obtener colores random
+        Random rand = new Random();
+        float r = rand.nextFloat();
+        float g = rand.nextFloat();
+        float b = rand.nextFloat();
+        Color randomColor = new Color(r, g, b);
+
+        //obtener valores por teclado del usuario
+        int x1,x2,y1,y2,escalar;
+        x1=Integer.parseInt(xinicial.getText());
+        y1=Integer.parseInt(yinicial.getText());
+        x2=Integer.parseInt(xfinal.getText());
+        y2=Integer.parseInt(yfinal.getText());
+        
+        escalar=Integer.parseInt(esc.getText());
+        
+        //Variables para el metodo DDA
+        float xi,yi,xf,yf;
+        float deltax,deltay,k;
+        float xinc,yinc;
+       // int xinc2;
+        //int yinc2;
+
+        x2=escalar*x2;
+        y2=escalar*y2;
+        
+        
+        
+        //comienza el metodo DDA-----------------------------------------
+        
+       
+        deltax=x2-x1;
+        deltay=y2-y1;
+        
+        if (Math.abs(deltax) > Math.abs(deltay)){
+        k=Math.abs(deltax);
+        }
+        else if (Math.abs(deltay) > Math.abs(deltax)){
+            k=Math.abs(deltay);
+        }
+        else
+        {
+            k=Math.abs(deltax);
+        }
+        
+        xinc=deltax/k;
+        yinc=deltay/k;
+       
+       
+     if(deltax>= 0 && deltay>= 0 )
+     {
+        if (deltax != 0 && deltay !=0){
+            System.out.print("parte 1");
+                yi=y1;
+            for(xi=x1;xi<=x2;xi=xi+xinc){
+
+                xf=xi+xinc;
+                yf=yi+yinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                yi=yi+yinc;
+            } 
+        }
+        else if ( deltax == 0){
+            System.out.print("parte 2");
+            xi=x1;
+            for(yi=y1;yi<=y2;yi=yi+yinc){
+
+                yf=yi+yinc;
+                xf=xi+xinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                xi=xi+xinc;
+            } 
+        }
+        else if ( deltay == 0){
+            System.out.print("parte 3");
+            yi=y1;
+            for(xi=x1;xi<=x2;xi=xi+xinc){
+
+                xf=xi+xinc;
+                yf=yi+yinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                yi=yi+yinc;
+            } 
+        }
+     }
+     else{
+        if (deltax != 0 && deltay !=0 && deltay>deltax){
+            System.out.print("parte 4");
+                yi=y1;
+            for(xi=x1;xi>=x2;xi=xi+xinc){
+
+                xf=xi+xinc;
+                yf=yi+yinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                yi=yi+yinc;
+            } 
+        }
+        else if (deltax != 0 && deltay !=0 && Math.abs(deltay)>Math.abs(deltax)){
+            System.out.print("parte 9");
+                xi=x1;
+            for(yi=y1;yi>=y2;yi=yi+yinc){
+
+                yf=yi+yinc;
+                xf=xi+xinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                xi=xi+xinc;
+            } 
+        }
+        else if (deltax != 0 && deltay !=0 && deltax>deltay){
+            System.out.print("parte 5");
+                yi=y1;
+            for(xi=x1;xi<=x2;xi=xi+xinc){
+
+                xf=xi+xinc;
+                yf=yi+yinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                yi=yi+yinc;
+            } 
+        }
+        else if ( deltax == 0){
+            System.out.print("parte 6");
+            xi=x1;
+            for(yi=y1;yi>=y2;yi=yi+yinc){  //yinc es negativo aqui
+
+                yf=yi-yinc;
+                xf=xi-xinc;
+
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                xi=xi-xinc;
+            } 
+        }
+        else if ( deltay == 0){
+            System.out.print("parte 7");
+            yi=y1;
+            for(xi=x1;xi>=x2;xi=xi+xinc){ //xinc es negativo aqui
+
+                xf=xi-xinc;
+                yf=yi-yinc;
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                yi=yi-yinc;
+            } 
+        }
+        else if(deltax == deltay ){
+            System.out.print("parte 8");
+            yi=y1;
+            for(xi=x1;xi>=x2;xi=xi+xinc){ //xinc es negativo aqui
+
+                xf=xi+xinc;
+                yf=yi+yinc;
+
+                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
+                t.setColor(randomColor.brighter());
+                yi=yi+yinc;
+            } 
+            }
+           
+            
+        }
+     
+     
+     //Termina el metodo DDA-----------------------------------------
+    }//GEN-LAST:event_EscalarLineaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonBorrarLinea;
     private javax.swing.JButton DibujarLinea;
+    private javax.swing.JButton EscalarLinea;
     private javax.swing.JPanel PanelDibujoLinea;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton TrasladarLinea;
+    private javax.swing.JTextField esc;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -396,7 +863,9 @@ public class PanelLinea extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField trasx;
+    private javax.swing.JTextField trasy;
     private javax.swing.JTextField xfinal;
     private javax.swing.JTextField xinicial;
     private javax.swing.JTextField yfinal;

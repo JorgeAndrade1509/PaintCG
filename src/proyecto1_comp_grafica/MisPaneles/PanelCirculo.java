@@ -34,21 +34,23 @@ public class PanelCirculo extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        xcentral = new javax.swing.JTextField();
-        radio = new javax.swing.JTextField();
+        xinicial = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        ycentral = new javax.swing.JTextField();
+        yinicial = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         DibujarCirculo = new javax.swing.JButton();
         PanelDibujoCirculo = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        radio = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        EscalarCirculo = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        esc = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 204));
 
-        jLabel2.setText("Punto central:");
-
-        jLabel3.setText("radio:");
+        jLabel2.setText("Punto Inicial:");
 
         jLabel4.setText("X");
 
@@ -69,72 +71,105 @@ public class PanelCirculo extends javax.swing.JPanel {
         PanelDibujoCirculo.setLayout(PanelDibujoCirculoLayout);
         PanelDibujoCirculoLayout.setHorizontalGroup(
             PanelDibujoCirculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 678, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         PanelDibujoCirculoLayout.setVerticalGroup(
             PanelDibujoCirculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 476, Short.MAX_VALUE)
+            .addGap(0, 498, Short.MAX_VALUE)
         );
+
+        jLabel5.setText("radio");
+
+        jLabel7.setText("X");
+
+        EscalarCirculo.setText("Escalar");
+        EscalarCirculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EscalarCirculoActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setText("Escalar:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(236, 236, 236)
-                        .addComponent(jLabel8))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(xcentral, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ycentral, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(72, 72, 72)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(radio, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addComponent(DibujarCirculo)
-                .addGap(60, 60, 60))
+                        .addComponent(jLabel8)
+                        .addContainerGap(604, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(PanelDibujoCirculo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(xinicial, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(yinicial, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(radio, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(DibujarCirculo)))
+                        .addGap(60, 60, 60))))
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(PanelDibujoCirculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(15, 15, 15)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(esc, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(EscalarCirculo)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel8)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
+                        .addGap(28, 28, 28)
                         .addComponent(DibujarCirculo))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+                        .addContainerGap()
+                        .addComponent(jLabel8)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(xcentral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel4))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(ycentral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel6)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel2)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(xinicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel4))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(yinicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel6)))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addComponent(jLabel5))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(radio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3))))))
+                                    .addComponent(jLabel7))))))
+                .addGap(16, 16, 16)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(esc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EscalarCirculo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(PanelDibujoCirculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addComponent(PanelDibujoCirculo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -142,28 +177,33 @@ public class PanelCirculo extends javax.swing.JPanel {
          Graphics t = PanelDibujoCirculo.getGraphics();
          
          
-         int xc,yc,e=0,r,x2;
+         int x,y,e,x2,xf,yf,r,xi,yi;
          
          
-         xc=Integer.parseInt(xcentral.getText());
-         yc=Integer.parseInt(ycentral.getText());
+         xi=Integer.parseInt(xinicial.getText());
+         yi=Integer.parseInt(yinicial.getText());
          
-         //x2=xc;
+    
          
          r=Integer.parseInt(radio.getText());
          
-         xc=xc+r;
+         x=r;
+         y=0;
+         e=0;
          
-         while( yc < xc){
-             t.drawLine(xc,yc,xc,yc);t.drawLine(yc,xc,yc,xc);
+         while( y <= x){
+             t.drawLine(x+xi,y+yi,x+xi,y+yi);t.drawLine(y+yi,x+xi,y+yi,x+xi);
+             t.drawLine(-x+xi,y+yi,-x+xi,y+yi);t.drawLine(-y+yi,x+xi,-y+yi,x+xi);
+             t.drawLine(x+xi,-y+yi,x+xi,-y+yi);t.drawLine(y+yi,-x+xi,y+yi,-x+xi);
+             t.drawLine(-x+xi,-y+yi,-x+xi,-y+yi);t.drawLine(-y+yi,-x+xi,-y+yi,-x+xi);
              
              
-             e=e+(2*yc)+1;
-             yc=yc+1;
+             e=e+(2*y)+1;
+             y=y+1;
              
-             if ((2*e) >((2*xc) - 1)){
-             xc=xc-1;
-             e=e - (2*xc) +1;
+             if ((2*e) >((2*x) - 1)){
+             x=x-1;
+             e=e - (2*x) +1;
              
              }
              
@@ -172,22 +212,7 @@ public class PanelCirculo extends javax.swing.JPanel {
              
          }
          
-        /* xc=x2-r;
-         while( yc < xc){
-            
-             t.drawLine(xc-(2*r),yc,xc-(2*r),yc);t.drawLine(yc,xc-(2*r),yc,xc-(2*r));
-             
-             e=e+(2*yc)+1;
-             yc=yc+1;
-             
-             if ((2*e) >((2*xc) - 1)){
-             xc=xc-1;
-             e=e - (2*xc) +1;
-             r=r-1;
-             }
-             
-             
-         }*/
+     
          
         
          
@@ -195,17 +220,68 @@ public class PanelCirculo extends javax.swing.JPanel {
          
     }//GEN-LAST:event_DibujarCirculoActionPerformed
 
+    private void EscalarCirculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EscalarCirculoActionPerformed
+        Graphics t = PanelDibujoCirculo.getGraphics();
+         
+         
+         int x,y,e,x2,xf,yf,r,xi,yi,escalar;
+         
+         
+         xi=Integer.parseInt(xinicial.getText());
+         yi=Integer.parseInt(yinicial.getText());
+         escalar=Integer.parseInt(esc.getText());
+         
+         
+        
+        
+         
+         r=Integer.parseInt(radio.getText());
+         
+         x=r;
+         y=0;
+         e=0;
+         
+         while( y <= x){
+             t.drawLine((escalar*x)+xi,(escalar*y)+yi,(escalar*x)+xi,(escalar*y)+yi);t.drawLine((escalar*y)+yi,(escalar*x)+xi,(escalar*y)+yi,(escalar*x)+xi);
+             t.drawLine(-(escalar*x)+xi,(escalar*y)+yi,-(escalar*x)+xi,(escalar*y)+yi);t.drawLine(-(escalar*y)+yi,(escalar*x)+xi,-(escalar*y)+yi,(escalar*x)+xi);
+             t.drawLine((escalar*x)+xi,-(escalar*y)+yi,(escalar*x)+xi,-(escalar*y)+yi);t.drawLine((escalar*y)+yi,-(escalar*x)+xi,(escalar*y)+yi,-(escalar*x)+xi);
+             t.drawLine(-(escalar*x)+xi,-(escalar*y)+yi,-(escalar*x)+xi,-(escalar*y)+yi);t.drawLine(-(escalar*y)+yi,-(escalar*x)+xi,-(escalar*y)+yi,-(escalar*x)+xi);
+             
+             /*t.drawLine(-x+xi,y+yi,-x+xi,y+yi);t.drawLine(-y+yi,x+xi,-y+yi,x+xi);
+             t.drawLine(-x+xi,y+yi,-x+xi,y+yi);t.drawLine(-y+yi,x+xi,-y+yi,x+xi);
+             t.drawLine(x+xi,-y+yi,x+xi,-y+yi);t.drawLine(y+yi,-x+xi,y+yi,-x+xi);
+             t.drawLine(-x+xi,-y+yi,-x+xi,-y+yi);t.drawLine(-y+yi,-x+xi,-y+yi,-x+xi);*/
+             
+             
+             e=e+(2*y)+1;
+             y=y+1;
+             
+             if ((2*e) >((2*x) - 1)){
+             x=x-1;
+             e=e - (2*x) +1;
+             
+             }
+  
+         }
+         
+         
+    }//GEN-LAST:event_EscalarCirculoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton DibujarCirculo;
+    private javax.swing.JButton EscalarCirculo;
     private javax.swing.JPanel PanelDibujoCirculo;
+    private javax.swing.JTextField esc;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JTextField radio;
-    private javax.swing.JTextField xcentral;
-    private javax.swing.JTextField ycentral;
+    private javax.swing.JTextField xinicial;
+    private javax.swing.JTextField yinicial;
     // End of variables declaration//GEN-END:variables
 }
