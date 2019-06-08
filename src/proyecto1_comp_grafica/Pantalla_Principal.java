@@ -8,7 +8,7 @@ package proyecto1_comp_grafica;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import proyecto1_comp_grafica.MisPaneles.PanelCirculo;
-import Cuadrado.PanelCuadrado;
+import proyecto1_comp_grafica.MisPaneles.PanelCuadrado;
 import proyecto1_comp_grafica.MisPaneles.PanelElipse;
 import proyecto1_comp_grafica.MisPaneles.PanelLinea;
 import Poligono.PanelPoligono;

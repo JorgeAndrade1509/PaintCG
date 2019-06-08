@@ -8,6 +8,7 @@ package proyecto1_comp_grafica.MisPaneles;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Random;
+import proyecto1_comp_grafica.Metodos;
 
 /**
  *
@@ -49,6 +50,9 @@ public class PanelTriangulo extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
         yfinal = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        esc = new javax.swing.JTextField();
+        EscalarTriangulo = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 255, 255));
 
@@ -78,11 +82,11 @@ public class PanelTriangulo extends javax.swing.JPanel {
         PanelDibujoTriangulo.setLayout(PanelDibujoTrianguloLayout);
         PanelDibujoTrianguloLayout.setHorizontalGroup(
             PanelDibujoTrianguloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 630, Short.MAX_VALUE)
+            .addGap(0, 812, Short.MAX_VALUE)
         );
         PanelDibujoTrianguloLayout.setVerticalGroup(
             PanelDibujoTrianguloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 468, Short.MAX_VALUE)
+            .addGap(0, 499, Short.MAX_VALUE)
         );
 
         DibujarTriangulo.setText("Dibujar");
@@ -98,64 +102,90 @@ public class PanelTriangulo extends javax.swing.JPanel {
 
         jLabel11.setText("Y");
 
+        jLabel1.setText("Escalar:");
+
+        EscalarTriangulo.setText("Escalar");
+        EscalarTriangulo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EscalarTrianguloActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(PanelDibujoTriangulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
+                                .addGap(6, 6, 6)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel4)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(xinicial, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel6)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(yinicial, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel5)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(xmedio, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(ymedio, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(xinicial, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(yinicial, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(xmedio, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel8))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel9)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel10)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(xfinal, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel11)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(yfinal, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(DibujarTriangulo, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(111, 111, 111)
+                                .addComponent(EscalarTriangulo)
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ymedio, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(xfinal, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(yfinal, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(DibujarTriangulo))))
-                .addContainerGap(16, Short.MAX_VALUE))
+                                .addComponent(esc, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(PanelDibujoTriangulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(DibujarTriangulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+                        .addContainerGap()
+                        .addComponent(jLabel8))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(esc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel2)
@@ -165,38 +195,36 @@ public class PanelTriangulo extends javax.swing.JPanel {
                                 .addComponent(yinicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel6))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel5)
-                                .addComponent(xmedio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel3))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel7)
-                                .addComponent(ymedio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel10)
                                 .addComponent(xfinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel9))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel11)
-                                .addComponent(yfinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(yfinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel5)
+                                    .addComponent(xmedio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel3))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel7)
+                                    .addComponent(ymedio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(DibujarTriangulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(EscalarTriangulo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(PanelDibujoTriangulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(64, 64, 64))
+                .addGap(21, 21, 21))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void DibujarTrianguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DibujarTrianguloActionPerformed
         
         Graphics t = PanelDibujoTriangulo.getGraphics();
-        
-        //Obtener colores random
-        Random rand = new Random();
-        float r = rand.nextFloat();
-        float g = rand.nextFloat();
-        float b = rand.nextFloat();
-        Color randomColor = new Color(r, g, b);
 
         //obtener valores por teclado del usuario
         int x1,x2,x3,y1,y2,y3,x4,y4,incremento=1;
@@ -209,171 +237,13 @@ public class PanelTriangulo extends javax.swing.JPanel {
         x4=x1; // para la tercera linea
         y4=y1; // para la tercera linea
         
-        //Variables para el metodo DDA
-        float xi,yi,xf,yf;
-        float deltax,deltay,k;
-        float xinc,yinc;
-       // int xinc2;
-        //int yinc2;
         
-        
+        Metodos obj =new Metodos();
+ 
     while (incremento != 4){
         
-        //comienza el metodo DDA-----------------------------------------
+      obj.DDA(t, x1, y1, x2, y2);
         
-       
-        deltax=x2-x1;
-        deltay=y2-y1;
-        
-        if (Math.abs(deltax) > Math.abs(deltay)){
-        k=Math.abs(deltax);
-        }
-        else if (Math.abs(deltay) > Math.abs(deltax)){
-            k=Math.abs(deltay);
-        }
-        else
-        {
-            k=Math.abs(deltax);
-        }
-        
-        xinc=deltax/k;
-        yinc=deltay/k;
-       
-       
-     if(deltax>= 0 && deltay>= 0 )
-     {
-        if (deltax != 0 && deltay !=0){
-            System.out.print("parte 1");
-                yi=y1;
-            for(xi=x1;xi<=x2;xi=xi+xinc){
-
-                xf=xi+xinc;
-                yf=yi+yinc;
-
-
-                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
-                t.setColor(randomColor.brighter());
-                yi=yi+yinc;
-            } 
-        }
-        else if ( deltax == 0){
-            System.out.print("parte 2");
-            xi=x1;
-            for(yi=y1;yi<=y2;yi=yi+yinc){
-
-                yf=yi+yinc;
-                xf=xi+xinc;
-
-
-                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
-                t.setColor(randomColor.brighter());
-                xi=xi+xinc;
-            } 
-        }
-        else if ( deltay == 0){
-            System.out.print("parte 3");
-            yi=y1;
-            for(xi=x1;xi<=x2;xi=xi+xinc){
-
-                xf=xi+xinc;
-                yf=yi+yinc;
-
-
-                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
-                t.setColor(randomColor.brighter());
-                yi=yi+yinc;
-            } 
-        }
-     }
-     else{
-        if (deltax != 0 && deltay !=0 && deltay>deltax){
-            System.out.print("parte 4");
-                yi=y1;
-            for(xi=x1;xi>=x2;xi=xi+xinc){
-
-                xf=xi+xinc;
-                yf=yi+yinc;
-
-
-                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
-                t.setColor(randomColor.brighter());
-                yi=yi+yinc;
-            } 
-        }
-        else if (deltax != 0 && deltay !=0 && Math.abs(deltay)>Math.abs(deltax)){
-            System.out.print("parte 9");
-                xi=x1;
-            for(yi=y1;yi>=y2;yi=yi+yinc){
-
-                yf=yi+yinc;
-                xf=xi+xinc;
-
-
-                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
-                t.setColor(randomColor.brighter());
-                xi=xi+xinc;
-            } 
-        } 
-        else if (deltax != 0 && deltay !=0 && deltax>deltay){
-            System.out.print("parte 5");
-                yi=y1;
-            for(xi=x1;xi<=x2;xi=xi+xinc){
-
-                xf=xi+xinc;
-                yf=yi+yinc;
-
-
-                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
-                t.setColor(randomColor.brighter());
-                yi=yi+yinc;
-            } 
-        }
-        else if ( deltax == 0){
-            System.out.print("parte 6");
-            xi=x1;
-            for(yi=y1;yi>=y2;yi=yi+yinc){  //yinc es negativo aqui
-
-                yf=yi-yinc;
-                xf=xi-xinc;
-
-
-                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
-                t.setColor(randomColor.brighter());
-                xi=xi-xinc;
-            } 
-        }
-        else if ( deltay == 0){
-            System.out.print("parte 7");
-            yi=y1;
-            for(xi=x1;xi>=x2;xi=xi+xinc){ //xinc es negativo aqui
-
-                xf=xi-xinc;
-                yf=yi-yinc;
-
-                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
-                t.setColor(randomColor.brighter());
-                yi=yi-yinc;
-            } 
-        }
-        else if(deltax == deltay ){
-            System.out.print("parte 8");
-            yi=y1;
-            for(xi=x1;xi>=x2;xi=xi+xinc){ //xinc es negativo aqui
-
-                xf=xi+xinc;
-                yf=yi+yinc;
-
-                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
-                t.setColor(randomColor.brighter());
-                yi=yi+yinc;
-            } 
-            }
-          
-            
-        }
-     
-     
-     //Termina el metodo DDA-----------------------------------------
      incremento++;
      
      if (incremento == 2){
@@ -395,13 +265,69 @@ public class PanelTriangulo extends javax.swing.JPanel {
     }//GEN-LAST:event_DibujarTrianguloActionPerformed
 
     private void xmedioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xmedioActionPerformed
-        // TODO add your handling code here:
+      
     }//GEN-LAST:event_xmedioActionPerformed
+
+    private void EscalarTrianguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EscalarTrianguloActionPerformed
+         Graphics t = PanelDibujoTriangulo.getGraphics();
+
+        //obtener valores por teclado del usuario
+        int x1,x2,x3,y1,y2,y3,x4,y4,incremento=1,escalar,deltax,deltay;
+        x1=Integer.parseInt(xinicial.getText());
+        y1=Integer.parseInt(yinicial.getText());
+        x2=Integer.parseInt(xmedio.getText());
+        y2=Integer.parseInt(ymedio.getText());
+        x3=Integer.parseInt(xfinal.getText());
+        y3=Integer.parseInt(yfinal.getText());
+        x4=x1; // para la tercera linea
+        y4=y1; // para la tercera linea
+        escalar=Integer.parseInt(esc.getText());
+        
+        Metodos obj =new Metodos();
+ 
+    while (incremento != 4){
+        
+        deltax=x2-x1;
+        deltay=y2-y1;
+       
+        if(Math.abs(deltax)>Math.abs(deltay)){
+           x2=escalar*x2;
+       }
+       else if (Math.abs(deltay)>Math.abs(deltax)){
+           y2=escalar*y2;
+       }
+       else if (deltay==deltax){
+           x2=escalar*x2;
+           y2=escalar*y2;
+       }
+        
+      obj.DDA(t, x1, y1, x2, y2);
+        
+     incremento++;
+     
+     if (incremento == 2){
+         x1=x2;
+         y1=y2;
+         x2=x3;
+         y2=y3;
+     }
+     else if (incremento == 3){
+         x1=x3;
+         y1=y3;
+         x2=x4;
+         y2=y4;
+     }
+     
+    }
+    }//GEN-LAST:event_EscalarTrianguloActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton DibujarTriangulo;
+    private javax.swing.JButton EscalarTriangulo;
     private javax.swing.JPanel PanelDibujoTriangulo;
+    private javax.swing.JTextField esc;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
