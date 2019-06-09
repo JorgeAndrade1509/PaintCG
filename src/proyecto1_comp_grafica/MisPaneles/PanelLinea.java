@@ -311,6 +311,8 @@ public class PanelLinea extends javax.swing.JPanel {
         y2=Integer.parseInt(yfinal.getText());
         
         
+        
+        
         obj.DDA(t,x1, y1, x2, y2);
         
       
@@ -363,30 +365,60 @@ public class PanelLinea extends javax.swing.JPanel {
 
     private void EscalarLineaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EscalarLineaActionPerformed
         Graphics t = PanelDibujoLinea.getGraphics();
-        
-       
+
         //obtener valores por teclado del usuario
-        int x1,x2,y1,y2,escalar;
+        int x1,x2,y1,y2,escalar,deltax,deltay;
         x1=Integer.parseInt(xinicial.getText());
         y1=Integer.parseInt(yinicial.getText());
         x2=Integer.parseInt(xfinal.getText());
         y2=Integer.parseInt(yfinal.getText());
         
         escalar=Integer.parseInt(esc.getText());
-        
-
-        x2=escalar*x2;
-        y2=escalar*y2;
-        
+    
         Metodos obj =new Metodos();
         
+        deltax=x2-x1;
+        deltay=y2-y1;
+        
+        
+        
+        if (escalar >0){
+                    if(Math.abs(deltax)>Math.abs(deltay)){
+                   x2=x2+((escalar-1)*deltax);
+               }
+               else if (Math.abs(deltay)>Math.abs(deltax)){
+                   y2=y2+((escalar-1)*deltay);
+               }
+               else if (deltay==deltax){
+                   x2=x2+((escalar-1)*deltax);
+                   y2=y2+((escalar-1)*deltay);
+               }
+                    xfinal.setText(Integer.toString(x2));
+                    yfinal.setText(Integer.toString(y2));
+        }
+        else if (escalar <0)
+        {
+                    if(Math.abs(deltax)>Math.abs(deltay)){
+                   x2=x1+(deltax/-escalar);
+               }
+               else if (Math.abs(deltay)>Math.abs(deltax)){
+                   y2=y1+(deltay/-escalar);
+               }
+               else if (deltay==deltax){
+                   x2=x1+(deltax/-escalar);
+                   y2=y1+(deltay/-escalar);
+               }
+                    xfinal.setText(Integer.toString(x2));
+                    yfinal.setText(Integer.toString(y2));
+        }
+
         obj.DDA(t, x1, y1, x2, y2);
         
        
     }//GEN-LAST:event_EscalarLineaActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        String option;
+        
         
         if (jComboBox1.getSelectedItem()== "Dibujar"){
             xinicial.setEnabled(true);

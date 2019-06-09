@@ -54,6 +54,8 @@ public class PanelCuadrado extends javax.swing.JPanel {
         EscalarCuadrado = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         esc = new javax.swing.JTextField();
+        RellenarElipse = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(255, 204, 204));
 
@@ -134,6 +136,15 @@ public class PanelCuadrado extends javax.swing.JPanel {
 
         jLabel11.setText("Escalar:");
 
+        RellenarElipse.setText("Rellenar");
+        RellenarElipse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RellenarElipseActionPerformed(evt);
+            }
+        });
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rojo", "Azul", "Verde", "Amarillo" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -168,28 +179,36 @@ public class PanelCuadrado extends javax.swing.JPanel {
                     .addComponent(jLabel1))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(esc, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(EscalarCuadrado))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(TrasladarCuadrado)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel9)
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel11)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(trasx, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(esc, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(EscalarCuadrado))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                                .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(trasy, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(101, 101, 101)))))
-                .addGap(54, 54, 54))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(TrasladarCuadrado)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel9)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(trasx, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel10)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(trasy, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(101, 101, 101)))))
+                        .addGap(54, 54, 54))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(RellenarElipse)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,7 +252,12 @@ public class PanelCuadrado extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
                             .addComponent(esc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(EscalarCuadrado))))
+                            .addComponent(EscalarCuadrado)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(RellenarElipse)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(30, 30, 30)
                 .addComponent(PanelDibujoCuadrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -260,9 +284,21 @@ public class PanelCuadrado extends javax.swing.JPanel {
     private void DibujarCuadradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DibujarCuadradoActionPerformed
         Graphics t = PanelDibujoCuadrado.getGraphics();
         
+        //Variables para el metodo DDA
+        float xi,yi,xf,yf;
+        float deltax,deltay,k;
+        float xinc,yinc;
+       
+        
+         //Obtener colores random
+        Random rand = new Random();
+        float r = rand.nextFloat();
+        float g = rand.nextFloat();
+        float b = rand.nextFloat();
+        Color randomColor = new Color(r, g, b);
         
         //obtener valores por teclado del usuario
-        int x1,x2,y1,y2,incremento=1,xf=0,yf=0;
+        int x1,x2,y1,y2,incremento=1;
         int la=0;
         x1=Integer.parseInt(xinicial.getText());
         y1=Integer.parseInt(yinicial.getText());
@@ -274,6 +310,76 @@ public class PanelCuadrado extends javax.swing.JPanel {
    x2=x1+la;
    y2=y1;
    
+   while(incremento != 5){
+   
+        obj.DDA(t,x1, y1, x2, y2);
+
+        if (incremento==1){ 
+            x1=Math.round(x2);
+            y1=Math.round(y2);
+           x2=Math.round(x2);
+           y2=Math.round(y2)+la;
+        }
+        
+        else if (incremento==2){
+            x1=Math.round(x2);
+            y1=Math.round(y2);
+           x2=Math.round(x2)-la;
+           y2=Math.round(y2);
+        }
+        
+        else if (incremento==3)
+        {
+            x1=Math.round(x2);
+        y1=Math.round(y2);
+            x2=Math.round(x2);
+           y2=Math.round(y2)-la;
+        }
+        
+        incremento=incremento+1;
+        
+   }    
+     
+       
+        
+        
+        
+        
+    }//GEN-LAST:event_DibujarCuadradoActionPerformed
+
+    private void ladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ladoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ladoActionPerformed
+
+    private void TrasladarCuadradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TrasladarCuadradoActionPerformed
+
+       // PanelDibujoCuadrado.removeAll();
+       // PanelDibujoCuadrado.repaint();
+
+        int tx,ty;
+
+        tx=Integer.parseInt(trasx.getText());
+        ty=Integer.parseInt(trasy.getText());
+
+        
+        Graphics t = PanelDibujoCuadrado.getGraphics();
+   
+        //obtener valores por teclado del usuario
+        int x1,x2,y1,y2,incremento=1;
+        int la=0;
+        x1=Integer.parseInt(xinicial.getText());
+        y1=Integer.parseInt(yinicial.getText());
+        la=Integer.parseInt(lado.getText());
+        
+   
+        x1=x1+tx;
+        y1=y1+ty;
+        
+        Metodos obj =new Metodos();
+        
+   x2=x1+la;
+   y2=y1;
+ 
    while(incremento != 5){
        
       
@@ -305,224 +411,6 @@ public class PanelCuadrado extends javax.swing.JPanel {
         incremento=incremento+1;
         
    }    
-     
-       
-        
-        
-        
-        
-    }//GEN-LAST:event_DibujarCuadradoActionPerformed
-
-    private void ladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ladoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ladoActionPerformed
-
-    private void TrasladarCuadradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TrasladarCuadradoActionPerformed
-
-        PanelDibujoCuadrado.removeAll();
-        PanelDibujoCuadrado.repaint();
-
-        int tx,ty;
-
-        tx=Integer.parseInt(trasx.getText());
-        ty=Integer.parseInt(trasy.getText());
-
-        
-
-        
-        
-        
-        Graphics t = PanelDibujoCuadrado.getGraphics();
-        
-         //Obtener colores random
-        Random rand = new Random();
-        float r = rand.nextFloat();
-        float g = rand.nextFloat();
-        float b = rand.nextFloat();
-        Color randomColor = new Color(r, g, b);
-        
-        //obtener valores por teclado del usuario
-        int x1,x2,y1,y2,incremento=1;
-        int la=0;
-        x1=Integer.parseInt(xinicial.getText());
-        y1=Integer.parseInt(yinicial.getText());
-        la=Integer.parseInt(lado.getText());
-        
-         //Variables para el metodo DDA
-        float xi,yi,xf=0,yf=0;
-        float deltax,deltay,k;
-        float xinc,yinc;
-        
-        
-        x1=x1+tx;
-        y1=y1+ty;
-        
-        
-        
-   x2=x1+la;
-   y2=y1;
-   while (incremento != 5)
-   {
-        
-        
-       
-        
-         //comienza el metodo DDA-----------------------------------------
-        
-       
-        deltax=x2-x1;
-        deltay=y2-y1;
-        
-        if (Math.abs(deltax) > Math.abs(deltay)){
-        k=Math.abs(deltax);
-        }
-        else if (Math.abs(deltay) > Math.abs(deltax)){
-            k=Math.abs(deltay);
-        }
-        else
-        {
-            k=Math.abs(deltax);
-        }
-        
-        xinc=deltax/k;
-        yinc=deltay/k;
-       
-       
-     if(deltax>= 0 && deltay>= 0 )
-     {
-        if (deltax != 0 && deltay !=0){
-            System.out.print("parte 1");
-                yi=y1;
-            for(xi=x1;xi<x2;xi=xi+xinc){
-
-                xf=xi+xinc;
-                yf=yi+yinc;
-
-
-                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
-                t.setColor(randomColor.brighter());
-                yi=yi+yinc;
-            } 
-        }
-        else if ( deltax == 0){
-            System.out.print("parte 2");
-            xi=x1;
-            for(yi=y1;yi<y2;yi=yi+yinc){
-
-                yf=yi+yinc;
-                xf=xi+xinc;
-
-
-                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
-                t.setColor(randomColor.brighter());
-                xi=xi+xinc;
-            } 
-        }
-        else if ( deltay == 0){
-            System.out.print("parte 3");
-            yi=y1;
-            for(xi=x1;xi<x2;xi=xi+xinc){
-
-                xf=xi+xinc;
-                yf=yi+yinc;
-
-
-                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
-                t.setColor(randomColor.brighter());
-                yi=yi+yinc;
-            } 
-        }
-     }
-     else{
-        if (deltax != 0 && deltay !=0 && deltay>deltax){
-            System.out.print("parte 4");
-                yi=y1;
-            for(xi=x1;xi>x2;xi=xi-xinc){
-
-                xf=xi-xinc;
-                yf=yi-yinc;
-
-
-                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
-                t.setColor(randomColor.brighter());
-                yi=yi-yinc;
-            } 
-        }
-        else if (deltax != 0 && deltay !=0 && deltax>deltay){
-            System.out.print("parte 5");
-                yi=y1;
-            for(xi=x1;xi<x2;xi=xi+xinc){
-
-                xf=xi+xinc;
-                yf=yi+yinc;
-
-
-                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
-                t.setColor(randomColor.brighter());
-                yi=yi+yinc;
-            } 
-        }
-        else if ( deltax == 0){
-            System.out.print("parte 6");
-            xi=x1;
-            for(yi=y1;yi>y2;yi=yi+yinc){ //yinc es negativo aqui
-
-                yf=yi-yinc;
-                xf=xi-xinc;
-
-
-                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
-                t.setColor(randomColor.brighter());
-                xi=xi-xinc;
-            } 
-        }
-        else if ( deltay == 0){
-            System.out.print("parte 7");
-            yi=y1;
-            for(xi=x1;xi>x2;xi=xi+xinc){ //xinc es negativo aqui
-
-                xf=xi-xinc;
-                yf=yi-yinc;
-
-
-                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
-                t.setColor(randomColor.brighter());
-                yi=yi-yinc;
-            } 
-        }    
-            
-            
-        }
-     
-     
-     //Termina el metodo DDA-----------------------------------------
-        
-     
-    
-        
-        
-        if (incremento==1){ 
-            x1=Math.round(xf);
-            y1=Math.round(yf);
-           x2=Math.round(xf);
-           y2=Math.round(yf)+la;
-        }
-        else if (incremento==2){
-            x1=Math.round(xf);
-            y1=Math.round(yf);
-           x2=Math.round(xf)-la;
-           y2=Math.round(yf);
-        }
-        else if (incremento==3)
-        {
-            x1=Math.round(xf);
-        y1=Math.round(yf);
-            x2=Math.round(xf);
-           y2=Math.round(yf)-la;
-        }
-        
-        incremento=incremento+1;
-    }  
       
 
         
@@ -530,199 +418,63 @@ public class PanelCuadrado extends javax.swing.JPanel {
 
     private void EscalarCuadradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EscalarCuadradoActionPerformed
        Graphics t = PanelDibujoCuadrado.getGraphics();
-        
-         //Obtener colores random
-        Random rand = new Random();
-        float r = rand.nextFloat();
-        float g = rand.nextFloat();
-        float b = rand.nextFloat();
-        Color randomColor = new Color(r, g, b);
-        
+
         //obtener valores por teclado del usuario
-        int x1,x2,y1,y2,incremento=1, escalar;
+        int x1,x2,y1,y2,incremento=1, escalar,laescalar=0;
         int la=0;
         x1=Integer.parseInt(xinicial.getText());
         y1=Integer.parseInt(yinicial.getText());
         la=Integer.parseInt(lado.getText());
         escalar=Integer.parseInt(esc.getText());
         
-         //Variables para el metodo DDA
-        float xi,yi,xf=0,yf=0;
-        float deltax,deltay,k;
-        float xinc,yinc;
+        
+     
+        Metodos obj =new Metodos();
         
         
+        if (escalar > 0){
+            laescalar=la*escalar;
+        }
+        else if (escalar < 0){
+            laescalar=la/-escalar;
+        }
         
-        
-   x2=escalar*(x1+la);
+   x2=x1+laescalar;
    y2=y1;
+  
+   lado.setText(Integer.toString(laescalar));
    
-   System.out.println("\n punto1 final: x2: "+x2+"y2"+y2+ "\n");
-   while (incremento != 5)
-   {
-        
-        
+        while(incremento != 5){
        
-        
-         //comienza el metodo DDA-----------------------------------------
-        
-       
-        deltax=x2-x1;
-        deltay=y2-y1;
-        
-        if (Math.abs(deltax) > Math.abs(deltay)){
-        k=Math.abs(deltax);
-        }
-        else if (Math.abs(deltay) > Math.abs(deltax)){
-            k=Math.abs(deltay);
-        }
-        else
-        {
-            k=Math.abs(deltax);
-        }
-        
-        xinc=deltax/k;
-        yinc=deltay/k;
-       
-       
-     if(deltax>= 0 && deltay>= 0 )
-     {
-        if (deltax != 0 && deltay !=0){
-            System.out.print("parte 1");
-                yi=y1;
-            for(xi=x1;xi<x2;xi=xi+xinc){
+      
+        obj.DDA(t, x1, y1, x2, y2);
 
-                xf=xi+xinc;
-                yf=yi+yinc;
-
-
-                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
-                t.setColor(randomColor.brighter());
-                yi=yi+yinc;
-            } 
-        }
-        else if ( deltax == 0){
-            System.out.print("parte 2");
-            xi=x1;
-            for(yi=y1;yi<y2;yi=yi+yinc){
-
-                yf=yi+yinc;
-                xf=xi+xinc;
-
-
-                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
-                t.setColor(randomColor.brighter());
-                xi=xi+xinc;
-            } 
-        }
-        else if ( deltay == 0){
-            System.out.print("parte 3");
-            yi=y1;
-            for(xi=x1;xi<x2;xi=xi+xinc){
-
-                xf=xi+xinc;
-                yf=yi+yinc;
-
-
-                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
-                t.setColor(randomColor.brighter());
-                yi=yi+yinc;
-            } 
-        }
-     }
-     else{
-        if (deltax != 0 && deltay !=0 && deltay>deltax){
-            System.out.print("parte 4");
-                yi=y1;
-            for(xi=x1;xi>x2;xi=xi-xinc){
-
-                xf=xi-xinc;
-                yf=yi-yinc;
-
-
-                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
-                t.setColor(randomColor.brighter());
-                yi=yi-yinc;
-            } 
-        }
-        else if (deltax != 0 && deltay !=0 && deltax>deltay){
-            System.out.print("parte 5");
-                yi=y1;
-            for(xi=x1;xi<x2;xi=xi+xinc){
-
-                xf=xi+xinc;
-                yf=yi+yinc;
-
-
-                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
-                t.setColor(randomColor.brighter());
-                yi=yi+yinc;
-            } 
-        }
-        else if ( deltax == 0){
-            System.out.print("parte 6");
-            xi=x1;
-            for(yi=y1;yi>y2;yi=yi+yinc){ //yinc es negativo aqui
-
-                yf=yi-yinc;
-                xf=xi-xinc;
-
-
-                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
-                t.setColor(randomColor.brighter());
-                xi=xi-xinc;
-            } 
-        }
-        else if ( deltay == 0){
-            System.out.print("parte 7");
-            yi=y1;
-            for(xi=x1;xi>x2;xi=xi+xinc){ //xinc es negativo aqui
-
-                xf=xi-xinc;
-                yf=yi-yinc;
-
-
-                t.drawLine(Math.round(xi), Math.round(yi), Math.round(xf), Math.round(yf));
-                t.setColor(randomColor.brighter());
-                yi=yi-yinc;
-            } 
-        }    
-            
-            
-        }
-     
-     
-     //Termina el metodo DDA-----------------------------------------
-        
-     
-    
-        
-        
+      
         if (incremento==1){ 
-            x1=Math.round(xf);
-            y1=Math.round(yf);
-           x2=Math.round(xf);
-           y2=escalar*(Math.round(yf)+la);
+            x1=Math.round(x2);
+            y1=Math.round(y2);
+           x2=Math.round(x2);
+           y2=Math.round(y2)+(laescalar);
         }
+        
         else if (incremento==2){
-            x1=Math.round(xf)-1;
-            y1=Math.round(yf);
-           x2=(Math.round(xf)/escalar)-la;
-           y2=Math.round(yf);
+            x1=Math.round(x2);
+            y1=Math.round(y2);
+           x2=Math.round(x2)-(laescalar);
+           y2=Math.round(y2);
         }
+        
         else if (incremento==3)
         {
-            x1=Math.round(xf)-1;
-        y1=Math.round(yf)-1;
-            x2=Math.round(xf);
-           y2=(Math.round(yf)/escalar)-la;
+            x1=Math.round(x2);
+        y1=Math.round(y2)-1;
+            x2=Math.round(x2);
+           y2=Math.round(y2)-(laescalar);
         }
         
         incremento=incremento+1;
-        System.out.println("punto "+incremento+" final: x2: "+x2+"y2: "+y2+ " \n");
-    }  
         
-        
+   }    
         
      
        
@@ -730,14 +482,59 @@ public class PanelCuadrado extends javax.swing.JPanel {
 
     }//GEN-LAST:event_EscalarCuadradoActionPerformed
 
+    private void RellenarElipseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RellenarElipseActionPerformed
+        
+         Graphics t = PanelDibujoCuadrado.getGraphics();
+         
+         //obtener valores por teclado del usuario
+        int x1,x2,y1,y2;
+        int la=0;
+        x1=Integer.parseInt(xinicial.getText());
+        y1=Integer.parseInt(yinicial.getText());
+        la=Integer.parseInt(lado.getText());
+        
+        
+         x2=x1+la;
+         y2=y1;
+        
+         
+         
+        if (jComboBox1.getSelectedItem()== "Rojo"){
+            t.setColor(Color.red);
+         t.fillRect(x1, y1, la, la);
+        }
+        else if (jComboBox1.getSelectedItem() == "Azul")
+        {
+            t.setColor(Color.blue);
+         t.fillRect(x1, y1, la, la);
+        }
+        else if (jComboBox1.getSelectedItem() == "Verde")
+        {
+            t.setColor(Color.green);
+         t.fillRect(x1, y1, la, la);
+        }
+        else if (jComboBox1.getSelectedItem() == "Amarillo")
+        {
+            t.setColor(Color.yellow);
+         t.fillRect(x1, y1, la, la);
+        }
+             
+       
+        // t.fillPolygon(obj.puntosenx(), obj.puntoseny(), 100);
+        
+        
+    }//GEN-LAST:event_RellenarElipseActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BorrarCuadrado;
     private javax.swing.JButton DibujarCuadrado;
     private javax.swing.JButton EscalarCuadrado;
     private javax.swing.JPanel PanelDibujoCuadrado;
+    private javax.swing.JButton RellenarElipse;
     private javax.swing.JButton TrasladarCuadrado;
     private javax.swing.JTextField esc;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

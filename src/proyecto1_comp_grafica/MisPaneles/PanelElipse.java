@@ -5,6 +5,12 @@
  */
 package proyecto1_comp_grafica.MisPaneles;
 
+import java.awt.Color;
+import java.awt.Graphics;
+import java.text.DecimalFormat;
+import javafx.scene.shape.Ellipse;
+
+
 /**
  *
  * @author jorgeandrade
@@ -27,101 +33,397 @@ public class PanelElipse extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        radio1 = new javax.swing.JTextField();
+        centrox = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        centroy = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        radio2 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
+        PanelDibujoElipse = new javax.swing.JPanel();
+        DibujarElipse = new javax.swing.JButton();
+        RellenarElipse = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        EscalarElipse = new javax.swing.JButton();
+        esc = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(153, 255, 153));
 
-        jLabel2.setText("Punto 1:");
+        jLabel3.setText("Centro");
 
-        jLabel3.setText("Punto 2:");
-
-        jLabel4.setText("X");
+        jLabel4.setText("ancho:");
 
         jLabel5.setText("X");
 
-        jLabel6.setText("Y");
+        jLabel6.setText("Alto");
 
         jLabel7.setText("Y");
 
         jLabel8.setText("Escriba los siguientes datos para dibujar el elipse:");
+
+        PanelDibujoElipse.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout PanelDibujoElipseLayout = new javax.swing.GroupLayout(PanelDibujoElipse);
+        PanelDibujoElipse.setLayout(PanelDibujoElipseLayout);
+        PanelDibujoElipseLayout.setHorizontalGroup(
+            PanelDibujoElipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 846, Short.MAX_VALUE)
+        );
+        PanelDibujoElipseLayout.setVerticalGroup(
+            PanelDibujoElipseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 456, Short.MAX_VALUE)
+        );
+
+        DibujarElipse.setText("Dibujar");
+        DibujarElipse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DibujarElipseActionPerformed(evt);
+            }
+        });
+
+        RellenarElipse.setText("Rellenar");
+        RellenarElipse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RellenarElipseActionPerformed(evt);
+            }
+        });
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rojo", "Azul", "Verde", "Amarillo" }));
+
+        EscalarElipse.setText("Escalar");
+        EscalarElipse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EscalarElipseActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Escalar:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(132, 132, 132)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel8)
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(radio1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(radio2, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(centrox, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(centroy, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(31, 31, 31)
+                                .addComponent(DibujarElipse)
+                                .addGap(5, 5, 5))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addGap(126, 126, 126)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(RellenarElipse)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(esc, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel7)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(133, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(EscalarElipse)))
+                    .addComponent(PanelDibujoElipse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel8)
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel4))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel6))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel5)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel3))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel7)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(544, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(7, 7, 7)
+                        .addComponent(DibujarElipse))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(EscalarElipse)
+                            .addComponent(esc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
+                        .addGap(5, 5, 5)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel4)
+                                        .addComponent(radio1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel6)
+                                        .addComponent(radio2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel5)
+                                        .addComponent(centrox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel3))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel7)
+                                        .addComponent(centroy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(19, 19, 19))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(RellenarElipse)
+                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)))
+                        .addComponent(PanelDibujoElipse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void DibujarElipseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DibujarElipseActionPerformed
+         Graphics t = PanelDibujoElipse.getGraphics();
+         
+         float rx,ry,xc,yc;
+         rx=Integer.parseInt(radio1.getText());
+         ry=Integer.parseInt(radio2.getText());
+          xc=Integer.parseInt(centrox.getText());
+          yc=Integer.parseInt(centroy.getText());
+         
+        
+       float dx, dy, d1, d2, x, y; 
+    x = 0; 
+    y = ry; 
+  
+    // Initial decision parameter of region 1 
+    d1 = (ry * ry) - (rx * rx * ry) + 
+                    (0.25f * rx * rx); 
+    dx = 2 * ry * ry * x; 
+    dy = 2 * rx * rx * y; 
+    DecimalFormat df = new DecimalFormat("#,###,##0.00000"); 
+      
+    // For region 1 
+    while (dx < dy) 
+    { 
+      
+        // Print points based on 4-way symmetry 
+        System.out.println(df.format((x + xc)) +  
+                            ", "+df.format((y + yc))); t.drawLine(Math.round(x + xc), Math.round(y + yc), Math.round(x + xc), Math.round(y + yc));
+        System.out.println(df.format((-x + xc)) + 
+                            ", "+ df.format((y + yc))); t.drawLine(Math.round(-x + xc), Math.round(y + yc), Math.round(-x + xc), Math.round(y + yc));
+        System.out.println(df.format((x + xc)) +  
+                            ", "+ df.format((-y + yc))); t.drawLine(Math.round(x + xc), Math.round(-y + yc), Math.round(x + xc), Math.round(-y + yc));
+        System.out.println(df.format((-x + xc)) + 
+                            ", "+df.format((-y + yc))); t.drawLine(Math.round(-x + xc), Math.round(-y + yc), Math.round(-x + xc), Math.round(-y + yc));
+  
+        // Checking and updating value of 
+        // decision parameter based on algorithm 
+        if (d1 < 0)  
+        { 
+            x++; 
+            dx = dx + (2 * ry * ry); 
+            d1 = d1 + dx + (ry * ry); 
+        } 
+        else
+        { 
+            x++; 
+            y--; 
+            dx = dx + (2 * ry * ry); 
+            dy = dy - (2 * rx * rx); 
+            d1 = d1 + dx - dy + (ry * ry); 
+        } 
+    } 
+  
+    // Decision parameter of region 2 
+    d2 = ((ry * ry) * ((x + 0.5f) * (x + 0.5f))) 
+        + ((rx * rx) * ((y - 1) * (y - 1))) 
+        - (rx * rx * ry * ry); 
+  
+    // Plotting points of region 2 
+    while (y >= 0) { 
+  
+        // printing points based on 4-way symmetry 
+        System.out.println(df.format((x + xc)) +  
+                            ", " + df.format((y + yc))); t.drawLine(Math.round(x + xc), Math.round(y + yc), Math.round(x + xc), Math.round(y + yc));
+        System.out.println(df.format((-x + xc)) +  
+                            ", "+ df.format((y + yc))); t.drawLine(Math.round(-x + xc), Math.round(y + yc), Math.round(-x + xc), Math.round(y + yc));
+        System.out.println(df.format((x + xc)) + 
+                            ", " + df.format((-y + yc))); t.drawLine(Math.round(x + xc), Math.round(-y + yc), Math.round(x + xc), Math.round(-y + yc));
+        System.out.println(df.format((-x + xc)) + 
+                            ", " + df.format((-y + yc))); t.drawLine(Math.round(-x + xc), Math.round(-y + yc), Math.round(-x + xc), Math.round(-y + yc));
+  
+        // Checking and updating parameter 
+        // value based on algorithm 
+        if (d2 > 0) { 
+            y--; 
+            dy = dy - (2 * rx * rx); 
+            d2 = d2 + (rx * rx) - dy; 
+        } 
+        else { 
+            y--; 
+            x++; 
+            dx = dx + (2 * ry * ry); 
+            dy = dy - (2 * rx * rx); 
+            d2 = d2 + dx - dy + (rx * rx); 
+        } 
+    } 
+        
+    }//GEN-LAST:event_DibujarElipseActionPerformed
+
+    private void RellenarElipseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RellenarElipseActionPerformed
+        
+        
+        Graphics t = PanelDibujoElipse.getGraphics();
+         
+         int rx,ry,xc,yc;
+         rx=Integer.parseInt(radio1.getText());
+         ry=Integer.parseInt(radio2.getText());
+          xc=Integer.parseInt(centrox.getText());
+          yc=Integer.parseInt(centroy.getText());
+
+     
+
+        if (jComboBox1.getSelectedItem()== "Rojo"){
+            t.setColor(Color.red);
+            t.fillOval(xc, yc, rx, ry);
+        }
+        else if (jComboBox1.getSelectedItem() == "Azul")
+        {
+            t.setColor(Color.blue);
+            t.fillOval(xc, yc, rx, ry);
+        }
+        else if (jComboBox1.getSelectedItem() == "Verde")
+        {
+            t.setColor(Color.green);
+            t.fillOval(xc, yc, rx, ry);
+        }
+        else if (jComboBox1.getSelectedItem() == "Amarillo")
+        {
+            t.setColor(Color.yellow);
+            t.fillOval(xc, yc, rx, ry);
+        }
+
+        // t.fillPolygon(obj.puntosenx(), obj.puntoseny(), 100);
+
+    }//GEN-LAST:event_RellenarElipseActionPerformed
+
+    private void EscalarElipseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EscalarElipseActionPerformed
+       Graphics t = PanelDibujoElipse.getGraphics();
+         
+         int rx,ry,xc,yc,escalar;
+         rx=Integer.parseInt(radio1.getText());
+         ry=Integer.parseInt(radio2.getText());
+          xc=Integer.parseInt(centrox.getText());
+          yc=Integer.parseInt(centroy.getText());
+          escalar=Integer.parseInt(esc.getText());
+         
+        
+          
+       float dx, dy, d1, d2, x, y; 
+    x = 0; 
+    y = ry; 
+  
+    // Initial decision parameter of region 1 
+    d1 = (ry * ry) - (rx * rx * ry) + 
+                    (0.25f * rx * rx); 
+    dx = 2 * ry * ry * x; 
+    dy = 2 * rx * rx * y; 
+    DecimalFormat df = new DecimalFormat("#,###,##0.00000"); 
+      
+    // For region 1 
+    while (dx < dy) 
+    { 
+      
+        // Print points based on 4-way symmetry 
+        System.out.println(df.format((x + xc)) +  
+                            ", "+df.format((y + yc))); t.drawLine(Math.round(x + xc), Math.round(y + yc), Math.round(x + xc), Math.round(y + yc));
+        System.out.println(df.format((-x + xc)) + 
+                            ", "+ df.format((y + yc))); t.drawLine(Math.round(-x + xc), Math.round(y + yc), Math.round(-x + xc), Math.round(y + yc));
+        System.out.println(df.format((x + xc)) +  
+                            ", "+ df.format((-y + yc))); t.drawLine(Math.round(x + xc), Math.round(-y + yc), Math.round(x + xc), Math.round(-y + yc));
+        System.out.println(df.format((-x + xc)) + 
+                            ", "+df.format((-y + yc))); t.drawLine(Math.round(-x + xc), Math.round(-y + yc), Math.round(-x + xc), Math.round(-y + yc));
+  
+        // Checking and updating value of 
+        // decision parameter based on algorithm 
+        if (d1 < 0)  
+        { 
+            x++; 
+            dx = dx + (2 * ry * ry); 
+            d1 = d1 + dx + (ry * ry); 
+        } 
+        else
+        { 
+            x++; 
+            y--; 
+            dx = dx + (2 * ry * ry); 
+            dy = dy - (2 * rx * rx); 
+            d1 = d1 + dx - dy + (ry * ry); 
+        } 
+    } 
+  
+    // Decision parameter of region 2 
+    d2 = ((ry * ry) * ((x + 0.5f) * (x + 0.5f))) 
+        + ((rx * rx) * ((y - 1) * (y - 1))) 
+        - (rx * rx * ry * ry); 
+  
+    // Plotting points of region 2 
+    while (y >= 0) { 
+  
+        // printing points based on 4-way symmetry 
+        System.out.println(df.format((x + xc)) +  
+                            ", " + df.format((y + yc))); t.drawLine(Math.round(x + xc), Math.round(y + yc), Math.round(x + xc), Math.round(y + yc));
+        System.out.println(df.format((-x + xc)) +  
+                            ", "+ df.format((y + yc))); t.drawLine(Math.round(-x + xc), Math.round(y + yc), Math.round(-x + xc), Math.round(y + yc));
+        System.out.println(df.format((x + xc)) + 
+                            ", " + df.format((-y + yc))); t.drawLine(Math.round(x + xc), Math.round(-y + yc), Math.round(x + xc), Math.round(-y + yc));
+        System.out.println(df.format((-x + xc)) + 
+                            ", " + df.format((-y + yc))); t.drawLine(Math.round(-x + xc), Math.round(-y + yc), Math.round(-x + xc), Math.round(-y + yc));
+  
+        // Checking and updating parameter 
+        // value based on algorithm 
+        if (d2 > 0) { 
+            y--; 
+            dy = dy - (2 * rx * rx); 
+            d2 = d2 + (rx * rx) - dy; 
+        } 
+        else { 
+            y--; 
+            x++; 
+            dx = dx + (2 * ry * ry); 
+            dy = dy - (2 * rx * rx); 
+            d2 = d2 + dx - dy + (rx * rx); 
+        } 
+    } 
+    }//GEN-LAST:event_EscalarElipseActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton DibujarElipse;
+    private javax.swing.JButton EscalarElipse;
+    private javax.swing.JPanel PanelDibujoElipse;
+    private javax.swing.JButton RellenarElipse;
+    private javax.swing.JTextField centrox;
+    private javax.swing.JTextField centroy;
+    private javax.swing.JTextField esc;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField radio1;
+    private javax.swing.JTextField radio2;
     // End of variables declaration//GEN-END:variables
 }
