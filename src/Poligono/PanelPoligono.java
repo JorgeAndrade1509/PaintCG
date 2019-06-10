@@ -38,6 +38,11 @@ public class PanelPoligono extends javax.swing.JPanel {
         DibujarPoligono = new javax.swing.JButton();
         PanelDibujoPoligono = new Poligono.lienzo();
         BorrarPoligono = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        xinicial = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        yinicial = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(204, 204, 255));
         addMouseListener(new java.awt.event.MouseAdapter() {
@@ -79,6 +84,12 @@ public class PanelPoligono extends javax.swing.JPanel {
             }
         });
 
+        jLabel2.setText("Centro:");
+
+        jLabel5.setText("X");
+
+        jLabel7.setText("Y");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -100,8 +111,18 @@ public class PanelPoligono extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(DibujarPoligono, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BorrarPoligono)))
-                .addContainerGap(406, Short.MAX_VALUE))
+                        .addComponent(BorrarPoligono)
+                        .addGap(36, 36, 36)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(xinicial, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(yinicial, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(142, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(PanelDibujoPoligono, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -113,15 +134,24 @@ public class PanelPoligono extends javax.swing.JPanel {
                 .addGap(12, 12, 12)
                 .addComponent(jLabel8)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_lados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(DibujarPoligono, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BorrarPoligono, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_radio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(PanelDibujoPoligono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txt_lados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6)
+                            .addComponent(DibujarPoligono, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BorrarPoligono, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_radio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(PanelDibujoPoligono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2)
+                        .addComponent(xinicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel5))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(yinicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel7)))
                 .addGap(21, 21, 21))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -131,6 +161,10 @@ public class PanelPoligono extends javax.swing.JPanel {
     }//GEN-LAST:event_formMousePressed
 
     private void DibujarPoligonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DibujarPoligonoActionPerformed
+        /*lienzo obj = new lienzo();
+        xinicial.setText(Integer.toString(obj.ObtenerX()));
+        yinicial.setText(Integer.toString(obj.ObtenerY()));*/
+        
         int num_lados = Integer.parseInt(this.txt_lados.getText());
         int radio = Integer.parseInt(this.txt_radio.getText());
         
@@ -159,10 +193,15 @@ public class PanelPoligono extends javax.swing.JPanel {
     private javax.swing.JButton BorrarPoligono;
     private javax.swing.JButton DibujarPoligono;
     private Poligono.lienzo PanelDibujoPoligono;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JTextField txt_lados;
     private javax.swing.JTextField txt_radio;
+    private javax.swing.JTextField xinicial;
+    private javax.swing.JTextField yinicial;
     // End of variables declaration//GEN-END:variables
 }

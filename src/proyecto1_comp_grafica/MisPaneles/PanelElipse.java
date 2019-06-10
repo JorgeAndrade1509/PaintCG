@@ -326,7 +326,11 @@ public class PanelElipse extends javax.swing.JPanel {
           yc=Integer.parseInt(centroy.getText());
           escalar=Integer.parseInt(esc.getText());
          
+          rx=rx*escalar;
+          ry=ry*escalar;
         
+          radio1.setText(Integer.toString(rx));
+          radio2.setText(Integer.toString(ry));
           
        float dx, dy, d1, d2, x, y; 
     x = 0; 

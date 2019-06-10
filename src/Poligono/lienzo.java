@@ -1,7 +1,6 @@
 
 package Poligono;
 
-import proyecto1_comp_grafica.Punto;
 import java.awt.Graphics;
 
 public class lienzo extends javax.swing.JPanel {
@@ -96,7 +95,13 @@ public void graficar(){
     }   
 //metodo adicional para hacer posible la grafica de la primitiva
     
-     
+   
+    public int ObtenerX() {
+       return X;
+    }
+    public int ObtenerY() {
+       return Y;
+    }
  
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -124,6 +129,8 @@ public void graficar(){
         //cuando presiono en el panel esta funcion guardara el punto X y Y (punto inicial) donde se mostrara el poligono.
         this.X = evt.getX();
     this.Y = evt.getY();
+    
+    
     }//GEN-LAST:event_formMousePressed
 }
     // Variables declaration - do not modify//GEN-BEGIN:variables

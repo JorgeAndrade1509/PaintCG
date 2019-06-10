@@ -320,18 +320,22 @@ public class PanelCirculo extends javax.swing.JPanel {
          yi=Integer.parseInt(yinicial.getText());
          escalar=Integer.parseInt(esc.getText());
   
-         r=Integer.parseInt(radio.getText());
+         r=Integer.parseInt(radio.getText())*escalar;
+         
+         radio.setText(Integer.toString(r));
          
          x=r;
          y=0;
          e=0;
          
          while( y <= x){
-             t.drawLine((escalar*x)+xi,(escalar*y)+yi,(escalar*x)+xi,(escalar*y)+yi);t.drawLine((escalar*y)+yi,(escalar*x)+xi,(escalar*y)+yi,(escalar*x)+xi);
-             t.drawLine(-(escalar*x)+xi,(escalar*y)+yi,-(escalar*x)+xi,(escalar*y)+yi);t.drawLine(-(escalar*y)+yi,(escalar*x)+xi,-(escalar*y)+yi,(escalar*x)+xi);
-             t.drawLine((escalar*x)+xi,-(escalar*y)+yi,(escalar*x)+xi,-(escalar*y)+yi);t.drawLine((escalar*y)+yi,-(escalar*x)+xi,(escalar*y)+yi,-(escalar*x)+xi);
-             t.drawLine(-(escalar*x)+xi,-(escalar*y)+yi,-(escalar*x)+xi,-(escalar*y)+yi);t.drawLine(-(escalar*y)+yi,-(escalar*x)+xi,-(escalar*y)+yi,-(escalar*x)+xi);
+             
 
+             t.drawLine(x+xi,y+yi,x+xi,y+yi);t.drawLine(y+yi,x+xi,y+yi,x+xi);
+             t.drawLine(-x+xi,y+yi,-x+xi,y+yi);t.drawLine(-y+yi,x+xi,-y+yi,x+xi);
+             t.drawLine(x+xi,-y+yi,x+xi,-y+yi);t.drawLine(y+yi,-x+xi,y+yi,-x+xi);
+             t.drawLine(-x+xi,-y+yi,-x+xi,-y+yi);t.drawLine(-y+yi,-x+xi,-y+yi,-x+xi);
+             
              e=e+(2*y)+1;
              y=y+1;
              
@@ -363,24 +367,31 @@ public class PanelCirculo extends javax.swing.JPanel {
 
          Graphics t = PanelDibujoCirculo.getGraphics();
 
-         int x,y,e,r,xi,yi,escalar;
+         int x,y,e,r,xi,yi;
 
          xi=Integer.parseInt(xinicial.getText());
          yi=Integer.parseInt(yinicial.getText());
-         escalar=Integer.parseInt(esc.getText());
+         
   
          r=Integer.parseInt(radio.getText());
+         
+         
          
          x=r;
          y=0;
          e=0;
          
          while( y <= x){
-             t.drawLine(x+xi+tx,y+yi+ty,x+xi+tx,y+yi+ty);t.drawLine(y+yi+ty,x+xi+tx,y+yi+ty,x+xi+tx);
+             /*t.drawLine(x+xi+tx,y+yi+ty,x+xi+tx,y+yi+ty);t.drawLine(y+yi+ty,x+xi+tx,y+yi+ty,x+xi+tx);
              t.drawLine(-x+xi+tx,y+yi+ty,-x+xi+tx,y+yi+ty);t.drawLine(-y+yi+ty,x+xi+tx,-y+yi+ty,x+xi+tx);
              t.drawLine(x+xi+tx,-y+yi+ty,x+xi+tx,-y+yi+ty);t.drawLine(y+yi+ty,-x+xi+tx,y+yi+ty,-x+xi+tx);
              t.drawLine(-x+xi+tx,-y+yi+ty,-x+xi+tx,-y+yi+ty);t.drawLine(-y+yi+ty,-x+xi+tx,-y+yi+ty,-x+xi+tx);  
-
+             */
+             t.drawLine(x+xi,y+yi,x+xi,y+yi);t.drawLine(y+yi,x+xi,y+yi,x+xi);
+             t.drawLine(-x+xi,y+yi,-x+xi,y+yi);t.drawLine(-y+yi,x+xi,-y+yi,x+xi);
+             t.drawLine(x+xi,-y+yi,x+xi,-y+yi);t.drawLine(y+yi,-x+xi,y+yi,-x+xi);
+             t.drawLine(-x+xi,-y+yi,-x+xi,-y+yi);t.drawLine(-y+yi,-x+xi,-y+yi,-x+xi);
+             
              e=e+(2*y)+1;
              y=y+1;
              

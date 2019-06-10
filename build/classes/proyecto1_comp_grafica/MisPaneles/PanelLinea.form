@@ -68,7 +68,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="EscalarLinea" pref="102" max="32767" attributes="0"/>
-                                  <Component id="jButton1" max="32767" attributes="0"/>
+                                  <Component id="RotarLinea" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -125,7 +125,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="rotar" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton1" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="RotarLinea" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -354,10 +354,13 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rotarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="RotarLinea">
       <Properties>
         <Property name="text" type="java.lang.String" value="Rotar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RotarLineaActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

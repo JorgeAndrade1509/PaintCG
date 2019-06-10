@@ -66,7 +66,7 @@ public class PanelLinea extends javax.swing.JPanel {
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
         rotar = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        RotarLinea = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 255, 204));
 
@@ -163,7 +163,12 @@ public class PanelLinea extends javax.swing.JPanel {
             }
         });
 
-        jButton1.setText("Rotar");
+        RotarLinea.setText("Rotar");
+        RotarLinea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RotarLineaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -211,7 +216,7 @@ public class PanelLinea extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(EscalarLinea, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
-                                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(RotarLinea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -255,7 +260,7 @@ public class PanelLinea extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel13)
                             .addComponent(rotar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(RotarLinea, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -310,14 +315,8 @@ public class PanelLinea extends javax.swing.JPanel {
         x2=Integer.parseInt(xfinal.getText());
         y2=Integer.parseInt(yfinal.getText());
         
-        
-        
-        
         obj.DDA(t,x1, y1, x2, y2);
-        
-      
-        
-        
+
     }//GEN-LAST:event_DibujarLineaActionPerformed
 
     private void yfinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yfinalActionPerformed
@@ -338,8 +337,8 @@ public class PanelLinea extends javax.swing.JPanel {
         Graphics t = PanelDibujoLinea.getGraphics();
        
         
-       // PanelDibujoLinea.removeAll();
-       // PanelDibujoLinea.repaint();
+       //PanelDibujoLinea.removeAll();
+       //PanelDibujoLinea.repaint();
         
         int tx,ty;
         
@@ -356,10 +355,17 @@ public class PanelLinea extends javax.swing.JPanel {
         y1=y1+ty;
         x2=x2+tx;
         y2=y2+ty;
+        
+        xinicial.setText(Integer.toString(x1));
+        yinicial.setText(Integer.toString(y1));
+        xfinal.setText(Integer.toString(x2));
+        yfinal.setText(Integer.toString(y2));
      
         Metodos obj =new Metodos();
         
         obj.DDA(t, x1, y1, x2, y2);
+        
+        
    
     }//GEN-LAST:event_TrasladarLineaActionPerformed
 
@@ -447,15 +453,19 @@ public class PanelLinea extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_rotarActionPerformed
 
+    private void RotarLineaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RotarLineaActionPerformed
+        
+    }//GEN-LAST:event_RotarLineaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonBorrarLinea;
     private javax.swing.JButton DibujarLinea;
     private javax.swing.JButton EscalarLinea;
     private javax.swing.JPanel PanelDibujoLinea;
+    private javax.swing.JButton RotarLinea;
     private javax.swing.JButton TrasladarLinea;
     private javax.swing.JTextField esc;
-    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
