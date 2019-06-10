@@ -65,7 +65,6 @@ public class PanelLinea extends javax.swing.JPanel {
         jLabel12 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
-        rotar = new javax.swing.JTextField();
         RotarLinea = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 255, 204));
@@ -156,13 +155,6 @@ public class PanelLinea extends javax.swing.JPanel {
 
         jLabel13.setText("Rotar:");
 
-        rotar.setEnabled(false);
-        rotar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rotarActionPerformed(evt);
-            }
-        });
-
         RotarLinea.setText("Rotar");
         RotarLinea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -206,13 +198,12 @@ public class PanelLinea extends javax.swing.JPanel {
                         .addGap(62, 62, 62)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel11)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel11)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(esc, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel13))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(esc, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
-                                    .addComponent(rotar))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(EscalarLinea, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
@@ -259,7 +250,6 @@ public class PanelLinea extends javax.swing.JPanel {
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel13)
-                            .addComponent(rotar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(RotarLinea, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -434,7 +424,7 @@ public class PanelLinea extends javax.swing.JPanel {
             esc.setEnabled(false);
             trasx.setEnabled(false);
             trasy.setEnabled(false);
-            rotar.setEnabled(false);
+           
         }
         else if (jComboBox1.getSelectedItem() == "Transformar")
         {
@@ -445,15 +435,36 @@ public class PanelLinea extends javax.swing.JPanel {
             esc.setEnabled(true);
             trasx.setEnabled(true);
             trasy.setEnabled(true);
-            rotar.setEnabled(true);
+            
         }
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void rotarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rotarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rotarActionPerformed
-
     private void RotarLineaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RotarLineaActionPerformed
+        Graphics t = PanelDibujoLinea.getGraphics();
+      
+        int angulo;
+     
+       // angulo=Integer.parseInt(rotar.getText());
+        
+        int x1,x2,y1,y2;
+        x1=Integer.parseInt(xinicial.getText());
+        y1=Integer.parseInt(yinicial.getText());
+        x2=Integer.parseInt(xfinal.getText());
+        y2=Integer.parseInt(yfinal.getText());
+        int x3,y3;
+        
+        angulo=6;
+        
+         Metodos obj =new Metodos();
+         
+         x3=(int)(Math.cos(angulo)*(x2-x1)-Math.sin(angulo)*(y2-y1)+x1);
+         y3=(int)(Math.sin(angulo)*(x2-x1)+Math.cos(angulo)*(y2-y1)+x1);
+         System.out.println("\nx3: "+x3+"    y3: "+y3);
+         
+        obj.DDA(t, x1, y1, x3, y3);
+        
+        xfinal.setText(Integer.toString(x3));
+        yfinal.setText(Integer.toString(y3));
         
     }//GEN-LAST:event_RotarLineaActionPerformed
 
@@ -480,7 +491,6 @@ public class PanelLinea extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField rotar;
     private javax.swing.JTextField trasx;
     private javax.swing.JTextField trasy;
     private javax.swing.JTextField xfinal;

@@ -57,7 +57,6 @@ public class PanelCuadrado extends javax.swing.JPanel {
         RellenarElipse = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
-        rotar = new javax.swing.JTextField();
         RotarCuadrado = new javax.swing.JButton();
         jComboBox2 = new javax.swing.JComboBox<>();
 
@@ -127,6 +126,10 @@ public class PanelCuadrado extends javax.swing.JPanel {
 
         jLabel8.setText("Trasladar:");
 
+        trasy.setEnabled(false);
+
+        trasx.setEnabled(false);
+
         jLabel9.setText("X");
 
         jLabel10.setText("Y");
@@ -140,6 +143,8 @@ public class PanelCuadrado extends javax.swing.JPanel {
 
         jLabel11.setText("Escalar:");
 
+        esc.setEnabled(false);
+
         RellenarElipse.setText("Rellenar");
         RellenarElipse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,7 +156,12 @@ public class PanelCuadrado extends javax.swing.JPanel {
 
         jLabel6.setText("Rotar:");
 
-        RotarCuadrado.setText("jButton1");
+        RotarCuadrado.setText("Rotar");
+        RotarCuadrado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RotarCuadradoActionPerformed(evt);
+            }
+        });
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dibujar", "Transformar" }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
@@ -203,12 +213,11 @@ public class PanelCuadrado extends javax.swing.JPanel {
                         .addGap(44, 44, 44)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 76, Short.MAX_VALUE)
+                                .addGap(0, 96, Short.MAX_VALUE)
                                 .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rotar, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(RotarCuadrado))
+                                .addGap(44, 44, 44)
+                                .addComponent(RotarCuadrado)
+                                .addGap(56, 56, 56))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -268,7 +277,6 @@ public class PanelCuadrado extends javax.swing.JPanel {
                         .addGap(13, 13, 13)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(rotar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(RotarCuadrado))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -297,20 +305,7 @@ public class PanelCuadrado extends javax.swing.JPanel {
 
     private void DibujarCuadradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DibujarCuadradoActionPerformed
         Graphics t = PanelDibujoCuadrado.getGraphics();
-        
-        //Variables para el metodo DDA
-        float xi,yi,xf,yf;
-        float deltax,deltay,k;
-        float xinc,yinc;
-       
-        
-         //Obtener colores random
-        Random rand = new Random();
-        float r = rand.nextFloat();
-        float g = rand.nextFloat();
-        float b = rand.nextFloat();
-        Color randomColor = new Color(r, g, b);
-        
+    
         //obtener valores por teclado del usuario
         int x1,x2,y1,y2,incremento=1;
         int la=0;
@@ -548,7 +543,7 @@ public class PanelCuadrado extends javax.swing.JPanel {
             esc.setEnabled(false);
             trasx.setEnabled(false);
             trasy.setEnabled(false);
-            rotar.setEnabled(false);
+            
         }
         else if (jComboBox2.getSelectedItem() == "Transformar")
         {
@@ -559,9 +554,65 @@ public class PanelCuadrado extends javax.swing.JPanel {
             esc.setEnabled(true);
             trasx.setEnabled(true);
             trasy.setEnabled(true);
-            rotar.setEnabled(true);
+            
         }
     }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void RotarCuadradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RotarCuadradoActionPerformed
+        Graphics t = PanelDibujoCuadrado.getGraphics();
+    
+        //obtener valores por teclado del usuario
+        int x1,x2,y1,y2,incremento=1;
+        int la=0;
+        x1=Integer.parseInt(xinicial.getText());
+        y1=Integer.parseInt(yinicial.getText());
+        la=Integer.parseInt(lado.getText());
+        
+        int angulo;
+        int x3,y3;
+      
+        angulo=6;
+        
+        Metodos obj =new Metodos();
+        
+   x2=x1+la;
+   y2=y1;
+   
+   while(incremento != 5){
+   
+        
+       x3=(int)(Math.cos(angulo)*(x2-x1)-Math.sin(angulo)*(y2-y1)+x1);
+         y3=(int)(Math.sin(angulo)*(x2-x1)+Math.cos(angulo)*(y2-y1)+x1);
+         System.out.println("\nx3: "+x3+"    y3: "+y3);
+         
+        obj.DDA(t, x1, y1, x3, y3);
+
+        if (incremento==1){ 
+            x1=Math.round(x2);
+            y1=Math.round(y2);
+           x2=Math.round(x2);
+           y2=Math.round(y2)+la;
+        }
+        
+        else if (incremento==2){
+            x1=Math.round(x2);
+            y1=Math.round(y2);
+           x2=Math.round(x2)-la;
+           y2=Math.round(y2);
+        }
+        
+        else if (incremento==3)
+        {
+            x1=Math.round(x2);
+        y1=Math.round(y2);
+            x2=Math.round(x2);
+           y2=Math.round(y2)-la;
+        }
+        
+        incremento=incremento+1;
+        
+   }  
+    }//GEN-LAST:event_RotarCuadradoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -586,7 +637,6 @@ public class PanelCuadrado extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField lado;
-    private javax.swing.JTextField rotar;
     private javax.swing.JTextField trasx;
     private javax.swing.JTextField trasy;
     private javax.swing.JTextField xinicial;

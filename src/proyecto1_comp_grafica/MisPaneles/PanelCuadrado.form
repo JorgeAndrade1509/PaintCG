@@ -68,12 +68,11 @@
                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="0" pref="76" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="96" max="32767" attributes="0"/>
                               <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="rotar" min="-2" pref="76" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                               <Component id="RotarCuadrado" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
@@ -147,7 +146,6 @@
                       <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="rotar" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="RotarCuadrado" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -252,8 +250,14 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="trasy">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="trasx">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel9">
       <Properties>
@@ -279,6 +283,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="esc">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="RellenarElipse">
       <Properties>
@@ -308,12 +315,13 @@
         <Property name="text" type="java.lang.String" value="Rotar:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="rotar">
-    </Component>
     <Component class="javax.swing.JButton" name="RotarCuadrado">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jButton1"/>
+        <Property name="text" type="java.lang.String" value="Rotar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RotarCuadradoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JComboBox" name="jComboBox2">
       <Properties>
