@@ -43,23 +43,13 @@ public class PanelCirculo extends javax.swing.JPanel {
         PanelDibujoCirculo = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         radio = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
         EscalarCirculo = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         esc = new javax.swing.JTextField();
         BorrarCirculo = new javax.swing.JButton();
-        TrasladarCirculo = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
-        trasy = new javax.swing.JTextField();
-        trasx = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel13 = new javax.swing.JLabel();
-        rotar = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 255, 204));
+        setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel2.setText("Punto Inicial:");
 
@@ -67,8 +57,9 @@ public class PanelCirculo extends javax.swing.JPanel {
 
         jLabel6.setText("Y");
 
-        jLabel8.setText("Escriba los siguientes datos para dibujar el circulo:");
+        jLabel8.setText("Elija una opción (Dibujar/Transformar):");
 
+        DibujarCirculo.setBackground(new java.awt.Color(153, 204, 255));
         DibujarCirculo.setText("Dibujar");
         DibujarCirculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,14 +77,13 @@ public class PanelCirculo extends javax.swing.JPanel {
         );
         PanelDibujoCirculoLayout.setVerticalGroup(
             PanelDibujoCirculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 476, Short.MAX_VALUE)
+            .addGap(0, 495, Short.MAX_VALUE)
         );
 
-        jLabel5.setText("radio");
-
-        jLabel7.setText("X");
+        jLabel5.setText("radio:");
 
         EscalarCirculo.setText("Escalar");
+        EscalarCirculo.setEnabled(false);
         EscalarCirculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EscalarCirculoActionPerformed(evt);
@@ -104,29 +94,13 @@ public class PanelCirculo extends javax.swing.JPanel {
 
         esc.setEnabled(false);
 
+        BorrarCirculo.setBackground(new java.awt.Color(255, 102, 102));
         BorrarCirculo.setText("Borrar");
         BorrarCirculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BorrarCirculoActionPerformed(evt);
             }
         });
-
-        TrasladarCirculo.setText("Trasladar");
-        TrasladarCirculo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TrasladarCirculoActionPerformed(evt);
-            }
-        });
-
-        jLabel9.setText("Trasladar:");
-
-        trasy.setEnabled(false);
-
-        trasx.setEnabled(false);
-
-        jLabel10.setText("X");
-
-        jLabel12.setText("Y");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dibujar", "Transformar" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -135,17 +109,6 @@ public class PanelCirculo extends javax.swing.JPanel {
             }
         });
 
-        jLabel13.setText("Rotar:");
-
-        rotar.setEnabled(false);
-        rotar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rotarActionPerformed(evt);
-            }
-        });
-
-        jButton1.setText("Rotar");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -153,73 +116,56 @@ public class PanelCirculo extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(radio, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel4))
+                            .addComponent(jLabel5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(xinicial, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(yinicial, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
+                                .addComponent(yinicial, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(radio, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(DibujarCirculo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BorrarCirculo)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
-                                .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(esc, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(EscalarCirculo))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(trasx, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(trasy, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(TrasladarCirculo))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rotar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(85, 85, 85))
-            .addComponent(PanelDibujoCirculo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BorrarCirculo, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(134, 134, 134)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(esc, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(EscalarCirculo)
+                .addContainerGap(238, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(PanelDibujoCirculo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel8)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(5, 5, 5)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(DibujarCirculo, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BorrarCirculo, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(8, 8, 8)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(xinicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel4)
@@ -229,38 +175,16 @@ public class PanelCirculo extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel5)
-                                    .addComponent(jLabel7)
-                                    .addComponent(radio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(36, 36, 36))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(BorrarCirculo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(DibujarCirculo, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(44, 44, 44))))
+                                    .addComponent(radio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
                             .addComponent(esc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(EscalarCirculo)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(trasx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel9)
-                            .addComponent(trasy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12)
-                            .addComponent(TrasladarCirculo))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel13)
-                            .addComponent(rotar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(EscalarCirculo))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(PanelDibujoCirculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -358,53 +282,6 @@ public class PanelCirculo extends javax.swing.JPanel {
         PanelDibujoCirculo.repaint();
     }//GEN-LAST:event_BorrarCirculoActionPerformed
 
-    private void TrasladarCirculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TrasladarCirculoActionPerformed
-
-        int tx,ty;
-
-        tx=Integer.parseInt(trasx.getText());
-        ty=Integer.parseInt(trasy.getText());
-
-         Graphics t = PanelDibujoCirculo.getGraphics();
-
-         int x,y,e,r,xi,yi;
-
-         xi=Integer.parseInt(xinicial.getText());
-         yi=Integer.parseInt(yinicial.getText());
-         
-  
-         r=Integer.parseInt(radio.getText());
-         
-         
-         
-         x=r;
-         y=0;
-         e=0;
-         
-         while( y <= x){
-             /*t.drawLine(x+xi+tx,y+yi+ty,x+xi+tx,y+yi+ty);t.drawLine(y+yi+ty,x+xi+tx,y+yi+ty,x+xi+tx);
-             t.drawLine(-x+xi+tx,y+yi+ty,-x+xi+tx,y+yi+ty);t.drawLine(-y+yi+ty,x+xi+tx,-y+yi+ty,x+xi+tx);
-             t.drawLine(x+xi+tx,-y+yi+ty,x+xi+tx,-y+yi+ty);t.drawLine(y+yi+ty,-x+xi+tx,y+yi+ty,-x+xi+tx);
-             t.drawLine(-x+xi+tx,-y+yi+ty,-x+xi+tx,-y+yi+ty);t.drawLine(-y+yi+ty,-x+xi+tx,-y+yi+ty,-x+xi+tx);  
-             */
-             t.drawLine(x+xi,y+yi,x+xi,y+yi);t.drawLine(y+yi,x+xi,y+yi,x+xi);
-             t.drawLine(-x+xi,y+yi,-x+xi,y+yi);t.drawLine(-y+yi,x+xi,-y+yi,x+xi);
-             t.drawLine(x+xi,-y+yi,x+xi,-y+yi);t.drawLine(y+yi,-x+xi,y+yi,-x+xi);
-             t.drawLine(-x+xi,-y+yi,-x+xi,-y+yi);t.drawLine(-y+yi,-x+xi,-y+yi,-x+xi);
-             
-             e=e+(2*y)+1;
-             y=y+1;
-             
-             if ((2*e) >((2*x) - 1)){
-             x=x-1;
-             e=e - (2*x) +1;
-             
-             }
-  
-         }
-
-    }//GEN-LAST:event_TrasladarCirculoActionPerformed
-
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         String option;
 
@@ -413,9 +290,9 @@ public class PanelCirculo extends javax.swing.JPanel {
             yinicial.setEnabled(true);
             radio.setEnabled(true);
             esc.setEnabled(false);
-            trasx.setEnabled(false);
-            trasy.setEnabled(false);
-            rotar.setEnabled(false);
+            DibujarCirculo.setEnabled(true);
+            EscalarCirculo.setEnabled(false);
+            
         }
         else if (jComboBox1.getSelectedItem() == "Transformar")
         {
@@ -423,15 +300,10 @@ public class PanelCirculo extends javax.swing.JPanel {
             yinicial.setEnabled(false);
             radio.setEnabled(false);
             esc.setEnabled(true);
-            trasx.setEnabled(true);
-            trasy.setEnabled(true);
-            rotar.setEnabled(true);
+            DibujarCirculo.setEnabled(false);
+            EscalarCirculo.setEnabled(true);
         }
     }//GEN-LAST:event_jComboBox1ActionPerformed
-
-    private void rotarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rotarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rotarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -439,25 +311,15 @@ public class PanelCirculo extends javax.swing.JPanel {
     private javax.swing.JButton DibujarCirculo;
     private javax.swing.JButton EscalarCirculo;
     private javax.swing.JPanel PanelDibujoCirculo;
-    private javax.swing.JButton TrasladarCirculo;
     private javax.swing.JTextField esc;
-    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField radio;
-    private javax.swing.JTextField rotar;
-    private javax.swing.JTextField trasx;
-    private javax.swing.JTextField trasy;
     private javax.swing.JTextField xinicial;
     private javax.swing.JTextField yinicial;
     // End of variables declaration//GEN-END:variables

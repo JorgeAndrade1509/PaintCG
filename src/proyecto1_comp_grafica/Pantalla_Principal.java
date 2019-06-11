@@ -12,6 +12,7 @@ import proyecto1_comp_grafica.MisPaneles.PanelCuadrado;
 import proyecto1_comp_grafica.MisPaneles.PanelElipse;
 import proyecto1_comp_grafica.MisPaneles.PanelLinea;
 import Poligono.PanelPoligono;
+import java.awt.Color;
 import proyecto1_comp_grafica.MisPaneles.PanelTriangulo;
 
 /**
@@ -95,29 +96,29 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         cuadrado = new javax.swing.JButton();
         linea = new javax.swing.JButton();
         triangulo = new javax.swing.JButton();
-        Elipse = new javax.swing.JButton();
+        elipse = new javax.swing.JButton();
         circulo = new javax.swing.JButton();
         PanelDinamico = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
         MenuSalir = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
 
         jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        PanelBotones.setBackground(new java.awt.Color(0, 153, 153));
+        PanelBotones.setBackground(new java.awt.Color(204, 204, 204));
         PanelBotones.setPreferredSize(new java.awt.Dimension(150, 631));
 
-        poligono.setText("Poligono");
+        poligono.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        poligono.setText("Polígono");
         poligono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 poligonoActionPerformed(evt);
             }
         });
 
+        cuadrado.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
         cuadrado.setText("Cuadrado");
         cuadrado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,28 +126,32 @@ public class Pantalla_Principal extends javax.swing.JFrame {
             }
         });
 
-        linea.setText("Linea");
+        linea.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        linea.setText("Línea");
         linea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lineaActionPerformed(evt);
             }
         });
 
-        triangulo.setText("Triangulo");
+        triangulo.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        triangulo.setText("Triángulo");
         triangulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 trianguloActionPerformed(evt);
             }
         });
 
-        Elipse.setText("Elipse");
-        Elipse.addActionListener(new java.awt.event.ActionListener() {
+        elipse.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        elipse.setText("Elipse");
+        elipse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ElipseActionPerformed(evt);
+                elipseActionPerformed(evt);
             }
         });
 
-        circulo.setText("Circulo");
+        circulo.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        circulo.setText("Círculo");
         circulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 circuloActionPerformed(evt);
@@ -160,12 +165,15 @@ public class Pantalla_Principal extends javax.swing.JFrame {
             .addGroup(PanelBotonesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PanelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Elipse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(elipse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(circulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(triangulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(poligono, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cuadrado, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
-                    .addComponent(linea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(linea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(PanelBotonesLayout.createSequentialGroup()
+                        .addGroup(PanelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(triangulo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(poligono, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(cuadrado, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         PanelBotonesLayout.setVerticalGroup(
@@ -182,13 +190,13 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(circulo, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Elipse, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(elipse, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         getContentPane().add(PanelBotones, java.awt.BorderLayout.LINE_START);
 
-        PanelDinamico.setBackground(new java.awt.Color(153, 0, 51));
+        PanelDinamico.setBackground(new java.awt.Color(204, 204, 204));
 
         javax.swing.GroupLayout PanelDinamicoLayout = new javax.swing.GroupLayout(PanelDinamico);
         PanelDinamico.setLayout(PanelDinamicoLayout);
@@ -198,15 +206,12 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         );
         PanelDinamicoLayout.setVerticalGroup(
             PanelDinamicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 649, Short.MAX_VALUE)
+            .addGap(0, 653, Short.MAX_VALUE)
         );
 
         getContentPane().add(PanelDinamico, java.awt.BorderLayout.CENTER);
 
         jMenu2.setText("Archivo");
-
-        jMenuItem1.setText("Guardar");
-        jMenu2.add(jMenuItem1);
 
         MenuSalir.setText("Salir");
         MenuSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -217,9 +222,6 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         jMenu2.add(MenuSalir);
 
         jMenuBar1.add(jMenu2);
-
-        jMenu3.setText("Edit");
-        jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
 
@@ -237,6 +239,12 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         triangulo1.setVisible(false);
         circulo1.setVisible(false);
         elipse1.setVisible(false);
+        linea.setBackground(Color.orange);
+        cuadrado.setBackground(new Color(238,238,238));
+        poligono.setBackground(new Color(238,238,238));
+        triangulo.setBackground(new Color(238,238,238));
+        elipse.setBackground(new Color(238,238,238));
+        circulo.setBackground(new Color(238,238,238));
     }//GEN-LAST:event_lineaActionPerformed
 
     private void cuadradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cuadradoActionPerformed
@@ -246,6 +254,12 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         triangulo1.setVisible(false);
         circulo1.setVisible(false);
         elipse1.setVisible(false);
+        linea.setBackground(new Color(238,238,238));
+        cuadrado.setBackground(Color.orange);
+        poligono.setBackground(new Color(238,238,238));
+        triangulo.setBackground(new Color(238,238,238));
+        elipse.setBackground(new Color(238,238,238));
+        circulo.setBackground(new Color(238,238,238));
     }//GEN-LAST:event_cuadradoActionPerformed
 
     private void poligonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poligonoActionPerformed
@@ -255,16 +269,28 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         triangulo1.setVisible(false);
         circulo1.setVisible(false);
         elipse1.setVisible(false);
+        linea.setBackground(new Color(238,238,238));
+        poligono.setBackground(Color.orange);
+        cuadrado.setBackground(new Color(238,238,238));
+        triangulo.setBackground(new Color(238,238,238));
+        elipse.setBackground(new Color(238,238,238));
+        circulo.setBackground(new Color(238,238,238));
     }//GEN-LAST:event_poligonoActionPerformed
 
-    private void ElipseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ElipseActionPerformed
+    private void elipseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elipseActionPerformed
         poligono1.setVisible(false);
         linea1.setVisible(false);
         cuadrado1.setVisible(false);
         triangulo1.setVisible(false);
         circulo1.setVisible(false);
         elipse1.setVisible(true);
-    }//GEN-LAST:event_ElipseActionPerformed
+        linea.setBackground(new Color(238,238,238));
+        elipse.setBackground(Color.orange);
+        cuadrado.setBackground(new Color(238,238,238));
+        triangulo.setBackground(new Color(238,238,238));
+        poligono.setBackground(new Color(238,238,238));
+        circulo.setBackground(new Color(238,238,238));
+    }//GEN-LAST:event_elipseActionPerformed
 
     private void trianguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trianguloActionPerformed
        poligono1.setVisible(false);
@@ -273,6 +299,12 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         triangulo1.setVisible(true);
         circulo1.setVisible(false);
         elipse1.setVisible(false);
+        linea.setBackground(new Color(238,238,238));
+        triangulo.setBackground(Color.orange);
+        cuadrado.setBackground(new Color(238,238,238));
+        poligono.setBackground(new Color(238,238,238));
+        elipse.setBackground(new Color(238,238,238));
+        circulo.setBackground(new Color(238,238,238));
     }//GEN-LAST:event_trianguloActionPerformed
 
     private void circuloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_circuloActionPerformed
@@ -282,6 +314,12 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         triangulo1.setVisible(false);
         circulo1.setVisible(true);
         elipse1.setVisible(false);
+        linea.setBackground(new Color(238,238,238));
+        circulo.setBackground(Color.orange);
+        cuadrado.setBackground(new Color(238,238,238));
+        triangulo.setBackground(new Color(238,238,238));
+        elipse.setBackground(new Color(238,238,238));
+        poligono.setBackground(new Color(238,238,238));
     }//GEN-LAST:event_circuloActionPerformed
 
     /**
@@ -320,17 +358,15 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Elipse;
     private javax.swing.JMenuItem MenuSalir;
     private javax.swing.JPanel PanelBotones;
     private javax.swing.JPanel PanelDinamico;
     private javax.swing.JButton circulo;
     private javax.swing.JButton cuadrado;
+    private javax.swing.JButton elipse;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JButton linea;
     private javax.swing.JButton poligono;
     private javax.swing.JButton triangulo;

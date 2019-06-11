@@ -39,6 +39,7 @@ public class PanelLinea extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -67,7 +68,9 @@ public class PanelLinea extends javax.swing.JPanel {
         jLabel13 = new javax.swing.JLabel();
         RotarLinea = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(204, 255, 204));
+        jMenuItem1.setText("jMenuItem1");
+
+        setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel1.setText("Elija una opcion (Dibujar/Transformar):");
 
@@ -95,11 +98,11 @@ public class PanelLinea extends javax.swing.JPanel {
         PanelDibujoLinea.setLayout(PanelDibujoLineaLayout);
         PanelDibujoLineaLayout.setHorizontalGroup(
             PanelDibujoLineaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 974, Short.MAX_VALUE)
         );
         PanelDibujoLineaLayout.setVerticalGroup(
             PanelDibujoLineaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 509, Short.MAX_VALUE)
+            .addGap(0, 508, Short.MAX_VALUE)
         );
 
         DibujarLinea.setBackground(new java.awt.Color(153, 204, 255));
@@ -119,6 +122,7 @@ public class PanelLinea extends javax.swing.JPanel {
         });
 
         TrasladarLinea.setText("Trasladar");
+        TrasladarLinea.setEnabled(false);
         TrasladarLinea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TrasladarLineaActionPerformed(evt);
@@ -136,6 +140,7 @@ public class PanelLinea extends javax.swing.JPanel {
         jLabel10.setText("Y");
 
         EscalarLinea.setText("Escalar");
+        EscalarLinea.setEnabled(false);
         EscalarLinea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EscalarLineaActionPerformed(evt);
@@ -156,6 +161,7 @@ public class PanelLinea extends javax.swing.JPanel {
         jLabel13.setText("Rotar:");
 
         RotarLinea.setText("Rotar");
+        RotarLinea.setEnabled(false);
         RotarLinea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RotarLineaActionPerformed(evt);
@@ -220,9 +226,10 @@ public class PanelLinea extends javax.swing.JPanel {
                                 .addComponent(trasy, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(TrasladarLinea)))
-                        .addGap(0, 165, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(PanelDibujoLinea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(PanelDibujoLinea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel12)))
                 .addContainerGap())
@@ -236,7 +243,7 @@ public class PanelLinea extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(133, Short.MAX_VALUE)
                 .addComponent(jLabel12)
                 .addGap(501, 501, 501))
             .addGroup(layout.createSequentialGroup()
@@ -266,7 +273,7 @@ public class PanelLinea extends javax.swing.JPanel {
                             .addComponent(trasy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10)
                             .addComponent(TrasladarLinea))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(BotonBorrarLinea, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -323,13 +330,14 @@ public class PanelLinea extends javax.swing.JPanel {
     }//GEN-LAST:event_BotonBorrarLineaActionPerformed
 
     private void TrasladarLineaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TrasladarLineaActionPerformed
-        
-        Graphics t = PanelDibujoLinea.getGraphics();
-       
-        
-       //PanelDibujoLinea.removeAll();
+ 
+      // PanelDibujoLinea.removeAll();
        //PanelDibujoLinea.repaint();
-        
+       
+       Graphics t = PanelDibujoLinea.getGraphics();
+       
+     
+               
         int tx,ty;
         
         tx=Integer.parseInt(trasx.getText());
@@ -421,9 +429,13 @@ public class PanelLinea extends javax.swing.JPanel {
             yinicial.setEnabled(true);
             xfinal.setEnabled(true);
             yfinal.setEnabled(true);
+            DibujarLinea.setEnabled(true);
             esc.setEnabled(false);
             trasx.setEnabled(false);
             trasy.setEnabled(false);
+            EscalarLinea.setEnabled(false);
+            TrasladarLinea.setEnabled(false);
+            RotarLinea.setEnabled(false);
            
         }
         else if (jComboBox1.getSelectedItem() == "Transformar")
@@ -432,10 +444,13 @@ public class PanelLinea extends javax.swing.JPanel {
             yinicial.setEnabled(false);
             xfinal.setEnabled(false);
             yfinal.setEnabled(false);
+            DibujarLinea.setEnabled(false);
             esc.setEnabled(true);
             trasx.setEnabled(true);
             trasy.setEnabled(true);
-            
+            EscalarLinea.setEnabled(true);
+            TrasladarLinea.setEnabled(true);
+            RotarLinea.setEnabled(true);         
         }
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
@@ -491,6 +506,7 @@ public class PanelLinea extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JTextField trasx;
     private javax.swing.JTextField trasy;
     private javax.swing.JTextField xfinal;

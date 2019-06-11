@@ -44,7 +44,6 @@ public class PanelCuadrado extends javax.swing.JPanel {
         lado = new javax.swing.JTextField();
         DibujarCuadrado = new javax.swing.JButton();
         BorrarCuadrado = new javax.swing.JButton();
-        PanelDibujoCuadrado = new javax.swing.JPanel();
         TrasladarCuadrado = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         trasy = new javax.swing.JTextField();
@@ -56,13 +55,12 @@ public class PanelCuadrado extends javax.swing.JPanel {
         esc = new javax.swing.JTextField();
         RellenarElipse = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel6 = new javax.swing.JLabel();
-        RotarCuadrado = new javax.swing.JButton();
         jComboBox2 = new javax.swing.JComboBox<>();
+        PanelDibujoCuadrado = new javax.swing.JPanel();
 
-        setBackground(new java.awt.Color(255, 204, 204));
+        setBackground(new java.awt.Color(204, 204, 204));
 
-        jLabel1.setText("Elija una opcion para modificar el cuadrado:");
+        jLabel1.setText("Elija una opción (Dibujar/Transformar):");
 
         jLabel2.setText("Punto inicial:");
 
@@ -82,7 +80,7 @@ public class PanelCuadrado extends javax.swing.JPanel {
             }
         });
 
-        jLabel5.setText("Lado:");
+        jLabel5.setText("Tamaño del lado:");
 
         lado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,6 +88,7 @@ public class PanelCuadrado extends javax.swing.JPanel {
             }
         });
 
+        DibujarCuadrado.setBackground(new java.awt.Color(153, 204, 255));
         DibujarCuadrado.setText("Dibujar");
         DibujarCuadrado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,6 +96,7 @@ public class PanelCuadrado extends javax.swing.JPanel {
             }
         });
 
+        BorrarCuadrado.setBackground(new java.awt.Color(255, 102, 102));
         BorrarCuadrado.setText("Borrar");
         BorrarCuadrado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,20 +104,8 @@ public class PanelCuadrado extends javax.swing.JPanel {
             }
         });
 
-        PanelDibujoCuadrado.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout PanelDibujoCuadradoLayout = new javax.swing.GroupLayout(PanelDibujoCuadrado);
-        PanelDibujoCuadrado.setLayout(PanelDibujoCuadradoLayout);
-        PanelDibujoCuadradoLayout.setHorizontalGroup(
-            PanelDibujoCuadradoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 785, Short.MAX_VALUE)
-        );
-        PanelDibujoCuadradoLayout.setVerticalGroup(
-            PanelDibujoCuadradoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 472, Short.MAX_VALUE)
-        );
-
         TrasladarCuadrado.setText("Trasladar");
+        TrasladarCuadrado.setEnabled(false);
         TrasladarCuadrado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TrasladarCuadradoActionPerformed(evt);
@@ -135,6 +123,7 @@ public class PanelCuadrado extends javax.swing.JPanel {
         jLabel10.setText("Y");
 
         EscalarCuadrado.setText("Escalar");
+        EscalarCuadrado.setEnabled(false);
         EscalarCuadrado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EscalarCuadradoActionPerformed(evt);
@@ -146,6 +135,7 @@ public class PanelCuadrado extends javax.swing.JPanel {
         esc.setEnabled(false);
 
         RellenarElipse.setText("Rellenar");
+        RellenarElipse.setEnabled(false);
         RellenarElipse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RellenarElipseActionPerformed(evt);
@@ -153,15 +143,7 @@ public class PanelCuadrado extends javax.swing.JPanel {
         });
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rojo", "Azul", "Verde", "Amarillo" }));
-
-        jLabel6.setText("Rotar:");
-
-        RotarCuadrado.setText("Rotar");
-        RotarCuadrado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RotarCuadradoActionPerformed(evt);
-            }
-        });
+        jComboBox1.setEnabled(false);
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dibujar", "Transformar" }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
@@ -169,6 +151,19 @@ public class PanelCuadrado extends javax.swing.JPanel {
                 jComboBox2ActionPerformed(evt);
             }
         });
+
+        PanelDibujoCuadrado.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout PanelDibujoCuadradoLayout = new javax.swing.GroupLayout(PanelDibujoCuadrado);
+        PanelDibujoCuadrado.setLayout(PanelDibujoCuadradoLayout);
+        PanelDibujoCuadradoLayout.setHorizontalGroup(
+            PanelDibujoCuadradoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        PanelDibujoCuadradoLayout.setVerticalGroup(
+            PanelDibujoCuadradoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 508, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -178,65 +173,60 @@ public class PanelCuadrado extends javax.swing.JPanel {
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(PanelDibujoCuadrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(xinicial, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(29, 29, 29)
-                                        .addComponent(jLabel4)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(yinicial, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel5)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(lado, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(DibujarCuadrado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addGap(28, 28, 28)
-                                .addComponent(BorrarCuadrado)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(RellenarElipse)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(44, 44, 44)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 96, Short.MAX_VALUE)
-                                .addComponent(jLabel6)
-                                .addGap(44, 44, 44)
-                                .addComponent(RotarCuadrado)
-                                .addGap(56, 56, 56))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(trasx, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel10)
-                                .addGap(14, 14, 14)
-                                .addComponent(trasy, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(TrasladarCuadrado, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(55, 55, 55)
-                                .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(esc, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(EscalarCuadrado))))))
+                                .addComponent(jLabel3))
+                            .addComponent(jLabel5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(xinicial, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(yinicial, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lado))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(DibujarCuadrado, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(BorrarCuadrado, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(RellenarElipse, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(esc, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(EscalarCuadrado))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(145, 145, 145)
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(trasx, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(trasy, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(TrasladarCuadrado, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(85, 85, 85))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(PanelDibujoCuadrado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -248,19 +238,20 @@ public class PanelCuadrado extends javax.swing.JPanel {
                             .addComponent(jLabel1)
                             .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(yinicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(xinicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(lado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(DibujarCuadrado)
-                            .addComponent(BorrarCuadrado, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(RellenarElipse, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4)
+                                    .addComponent(yinicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(xinicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel5)
+                                    .addComponent(lado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(DibujarCuadrado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BorrarCuadrado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(TrasladarCuadrado)
@@ -269,20 +260,18 @@ public class PanelCuadrado extends javax.swing.JPanel {
                             .addComponent(trasx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10)
                             .addComponent(trasy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(3, 3, 3)
+                        .addGap(2, 2, 2)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11)
                             .addComponent(esc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(EscalarCuadrado))
-                        .addGap(13, 13, 13)
+                            .addComponent(EscalarCuadrado)
+                            .addComponent(jLabel11))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(RotarCuadrado))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(RellenarElipse)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(PanelDibujoCuadrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -383,6 +372,9 @@ public class PanelCuadrado extends javax.swing.JPanel {
    
         x1=x1+tx;
         y1=y1+ty;
+        
+        xinicial.setText(Integer.toString(x1));
+        yinicial.setText(Integer.toString(y1));
         
         Metodos obj =new Metodos();
         
@@ -539,10 +531,15 @@ public class PanelCuadrado extends javax.swing.JPanel {
             xinicial.setEnabled(true);
             yinicial.setEnabled(true);
             lado.setEnabled(true);
-            
+             DibujarCuadrado.setEnabled(true);
             esc.setEnabled(false);
             trasx.setEnabled(false);
             trasy.setEnabled(false);
+            EscalarCuadrado.setEnabled(false);
+            TrasladarCuadrado.setEnabled(false);
+           
+            jComboBox1.setEnabled(false);
+            RellenarElipse.setEnabled(false);
             
         }
         else if (jComboBox2.getSelectedItem() == "Transformar")
@@ -550,69 +547,17 @@ public class PanelCuadrado extends javax.swing.JPanel {
             xinicial.setEnabled(false);
             yinicial.setEnabled(false);
             lado.setEnabled(false);
-            
+             DibujarCuadrado.setEnabled(false);
             esc.setEnabled(true);
             trasx.setEnabled(true);
             trasy.setEnabled(true);
-            
+            EscalarCuadrado.setEnabled(true);
+            TrasladarCuadrado.setEnabled(true);
+           
+            jComboBox1.setEnabled(true);
+            RellenarElipse.setEnabled(true);
         }
     }//GEN-LAST:event_jComboBox2ActionPerformed
-
-    private void RotarCuadradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RotarCuadradoActionPerformed
-        Graphics t = PanelDibujoCuadrado.getGraphics();
-    
-        //obtener valores por teclado del usuario
-        int x1,x2,y1,y2,incremento=1;
-        int la=0;
-        x1=Integer.parseInt(xinicial.getText());
-        y1=Integer.parseInt(yinicial.getText());
-        la=Integer.parseInt(lado.getText());
-        
-        int angulo;
-        int x3,y3;
-      
-        angulo=6;
-        
-        Metodos obj =new Metodos();
-        
-   x2=x1+la;
-   y2=y1;
-   
-   while(incremento != 5){
-   
-        
-       x3=(int)(Math.cos(angulo)*(x2-x1)-Math.sin(angulo)*(y2-y1)+x1);
-         y3=(int)(Math.sin(angulo)*(x2-x1)+Math.cos(angulo)*(y2-y1)+x1);
-         System.out.println("\nx3: "+x3+"    y3: "+y3);
-         
-        obj.DDA(t, x1, y1, x3, y3);
-
-        if (incremento==1){ 
-            x1=Math.round(x2);
-            y1=Math.round(y2);
-           x2=Math.round(x2);
-           y2=Math.round(y2)+la;
-        }
-        
-        else if (incremento==2){
-            x1=Math.round(x2);
-            y1=Math.round(y2);
-           x2=Math.round(x2)-la;
-           y2=Math.round(y2);
-        }
-        
-        else if (incremento==3)
-        {
-            x1=Math.round(x2);
-        y1=Math.round(y2);
-            x2=Math.round(x2);
-           y2=Math.round(y2)-la;
-        }
-        
-        incremento=incremento+1;
-        
-   }  
-    }//GEN-LAST:event_RotarCuadradoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -621,7 +566,6 @@ public class PanelCuadrado extends javax.swing.JPanel {
     private javax.swing.JButton EscalarCuadrado;
     private javax.swing.JPanel PanelDibujoCuadrado;
     private javax.swing.JButton RellenarElipse;
-    private javax.swing.JButton RotarCuadrado;
     private javax.swing.JButton TrasladarCuadrado;
     private javax.swing.JTextField esc;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -633,7 +577,6 @@ public class PanelCuadrado extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField lado;
